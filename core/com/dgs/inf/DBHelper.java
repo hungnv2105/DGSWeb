@@ -9,6 +9,8 @@ import com.dgs.dao.DGException;
 
 public interface DBHelper {
 	
+	public final static String CONFIG_FILE_NAME = "config/dbconfig.properties";
+	
 	public Connection getConnection() throws DGException;
 	public void pushConnection(Connection conn) throws DGException;
 	public void release() throws DGException;

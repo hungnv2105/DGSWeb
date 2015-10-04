@@ -19,6 +19,9 @@ public class LoadingDBConfig {
 	protected String dbName;
 	protected String dbUser;
 	protected String dbPass;
+	protected int MAX_CONNECTIONS;
+	protected int INI_CONNECTIONS;
+	protected int CONNECTION_TIME_OUT;
 
 	static final Logger LOGGER = Logger.getLogger(LoadingDBConfig.class);
 
@@ -66,6 +69,15 @@ public class LoadingDBConfig {
 					this.dbPass = prop.getProperty(key);
 				}
 				if (key.equals(IConstants.DRIVER)) {
+					this.driver = prop.getProperty(key);
+				}
+				if (key.equals(IConstants.MAX_CONNECTIONS)) {
+					this.driver = prop.getProperty(key);
+				}
+				if (key.equals(IConstants.INI_CONNECTIONS)) {
+					this.driver = prop.getProperty(key);
+				}
+				if (key.equals(IConstants.CONNECTION_TIME_OUT)) {
 					this.driver = prop.getProperty(key);
 				}
 			}

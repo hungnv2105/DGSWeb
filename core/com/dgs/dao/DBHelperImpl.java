@@ -24,9 +24,7 @@ public class DBHelperImpl extends LoadingDBConfig implements DBHelper {
 
 	final static Logger LOGGER = Logger.getLogger(DBHelperImpl.class);
 	private static LinkedList<Connection> pool = new LinkedList<Connection>();
-	public final static int MAX_CONNECTIONS = 10;
-	public final static int INI_CONNECTIONS = 1;
-	private final static String CONFIG_FILE_NAME = "config/dbconfig.properties";
+	private final static String CONFIG_FILE_NAME = DBHelper.CONFIG_FILE_NAME;
 	private final String location = this.getClass().toString();
 
 	public DBHelperImpl() {
