@@ -4,6 +4,7 @@
 package com.dgs.dao;
 
 import java.sql.Blob;
+import java.sql.CallableStatement;
 import java.sql.Clob;
 import java.sql.Connection;
 import java.sql.Date;
@@ -45,39 +46,7 @@ public class DCoreImpl implements DCore {
 				} else {
 					prstm = conn.prepareStatement(query);
 				}
-				if (prstm != null) {
-					if (prstmParams != null && prstmParams.size() > 0) {
-						int i = 0;
-						for (Entry<Integer, Object> e : prstmParams.entrySet()) {
-							if (e.getKey() == Types.INTEGER) {
-								prstm.setInt(++i, (int) e.getValue());
-							} else if (e.getKey() == Types.BIGINT) {
-								prstm.setLong(++i, (long) e.getValue());
-							} else if (e.getKey() == Types.FLOAT) {
-								prstm.setFloat(++i, (float) e.getValue());
-							} else if (e.getKey() == Types.DOUBLE) {
-								prstm.setDouble(++i, (double) e.getValue());
-							} else if (e.getKey() == Types.VARCHAR || e.getKey() == Types.NVARCHAR
-									|| e.getKey() == Types.LONGVARCHAR || e.getKey() == Types.LONGNVARCHAR) {
-								prstm.setString(++i, (String) e.getValue());
-							} else if (e.getKey() == Types.DATE) {
-								prstm.setDate(++i, (Date) e.getValue());
-							} else if (e.getKey() == Types.BOOLEAN) {
-								prstm.setFloat(++i, (float) e.getValue());
-							} else if (e.getKey() == Types.CLOB) {
-								prstm.setClob(++i, (Clob) e.getValue());
-							} else if (e.getKey() == Types.BLOB) {
-								prstm.setBlob(++i, (Blob) e.getValue());
-							} else if (e.getKey() == Types.NCLOB) {
-								prstm.setClob(++i, (Clob) e.getValue());
-							} else {
-								throw new DGException(errorInf + " -> " + IErrorCode.ERROR_PARAMS_TYPE_CODE + " : "
-										+ IErrorCode.ERROR_PARAMS_TYPE_DESC);
-							}
-
-						}
-					}
-				}
+				setPraramsForSQLStatement(prstm, prstmParams);
 			}
 		} catch (SQLException sqlEx) {
 			throw new DGException(sqlEx, errorInf);
@@ -129,6 +98,73 @@ public class DCoreImpl implements DCore {
 			throw new DGException(sqlEx, errorInf);
 		}
 		return rs;
+	}
+
+	@Override
+	public ResultSet executeSP(Connection conn, String callableStatement, HashMap<Integer, Object> prstmParams)
+			throws DGException {
+		String errorInf = this.location + " -> executeSP";
+		ResultSet rs = null; 
+		try {
+			if (conn != null && !conn.isClosed()) {
+				if (callableStatement != null && callableStatement.length() > 0) {
+					String stmCall = " ? {" + callableStatement + "}";
+					CallableStatement cs = conn.prepareCall(stmCall);
+					setPraramsForSQLStatement(cs, prstmParams);
+					if (cs != null) {
+						rs = cs.executeQuery();
+					} else {
+						throw new DGException(errorInf + " : " + IErrorCode.NULL_CALLABLE_CODE
+								+ IErrorCode.NULL_CALLABLE_DESC);
+					}
+				} else {
+					throw new DGException(errorInf + " : " + IErrorCode.FAIL_CONNECTION_CODE
+							+ IErrorCode.FAIL_CONNECTION_DESC);
+				}
+			} else {
+				throw new DGException("");
+			}
+		} catch (SQLException sqlEx) {
+			throw new DGException(sqlEx, errorInf);
+		}
+		return rs;
+	}
+	
+	private void setPraramsForSQLStatement(PreparedStatement prstm, HashMap<Integer, Object> prstmParams) throws DGException, SQLException {
+		String errorInf = this.location + " -> setPraramsForSQLStatement";
+		if (prstm != null) {
+			if (prstmParams != null && prstmParams.size() > 0) {
+				int i = 0;
+				for (Entry<Integer, Object> e : prstmParams.entrySet()) {
+					if (e.getKey() == Types.INTEGER) {
+						prstm.setInt(++i, (int) e.getValue());
+					} else if (e.getKey() == Types.BIGINT) {
+						prstm.setLong(++i, (long) e.getValue());
+					} else if (e.getKey() == Types.FLOAT) {
+						prstm.setFloat(++i, (float) e.getValue());
+					} else if (e.getKey() == Types.DOUBLE) {
+						prstm.setDouble(++i, (double) e.getValue());
+					} else if (e.getKey() == Types.VARCHAR || e.getKey() == Types.NVARCHAR
+							|| e.getKey() == Types.LONGVARCHAR || e.getKey() == Types.LONGNVARCHAR) {
+						prstm.setString(++i, (String) e.getValue());
+					} else if (e.getKey() == Types.DATE) {
+						prstm.setDate(++i, (Date) e.getValue());
+					} else if (e.getKey() == Types.BOOLEAN) {
+						prstm.setFloat(++i, (float) e.getValue());
+					} else if (e.getKey() == Types.CLOB) {
+						prstm.setClob(++i, (Clob) e.getValue());
+					} else if (e.getKey() == Types.BLOB) {
+						prstm.setBlob(++i, (Blob) e.getValue());
+					} else if (e.getKey() == Types.NCLOB) {
+						prstm.setClob(++i, (Clob) e.getValue());
+					} else {
+						throw new DGException(errorInf + " : " + IErrorCode.ERROR_PARAMS_TYPE_CODE
+								+ IErrorCode.ERROR_PARAMS_TYPE_DESC);
+					}
+
+				}
+			}
+		}
 	}
 
 }
