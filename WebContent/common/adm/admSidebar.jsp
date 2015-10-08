@@ -16,7 +16,7 @@
 	</div>
 	<div id="search-box">
 		<s:textfield name="txtSearch" cssClass="input-text" />
-		<s:submit key="search" cssClass="btn-function" />
+		<s:div value="getText('search')" ></s:div>
 	</div>
 </div>
 <div id="sb-titles">
