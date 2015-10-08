@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="../../common/tags.jsp"%>
 <%@ include file="../../common/params.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
