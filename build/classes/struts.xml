@@ -5,7 +5,9 @@
 
 	<constant name="struts.devMode" value="true" />
  	<constant name="struts.action.extension" value="html" />
+ 	<constant name="struts.custom.i18n.resources" value="global_vi_VN" />
  	
-	<include file="/user/mapping-user.xml" />
+	<include file="/struts_mappings/mapping-admin-menu.xml" />
+	<include file="/struts_mappings/mapping-user.xml" />
 	
 </struts>

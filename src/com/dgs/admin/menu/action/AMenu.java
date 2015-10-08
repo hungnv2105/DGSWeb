@@ -10,6 +10,9 @@ public class AMenu extends ACoreImpl{
 	 */
 	private static final long serialVersionUID = -5736939767190021553L;
 	
-	
+	@Override
+	public String execute() throws Exception {
+		return SUCCESS;
+	}
 
 }
