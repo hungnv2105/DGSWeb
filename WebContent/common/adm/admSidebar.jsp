@@ -15,8 +15,8 @@
 		</div>
 	</div>
 	<div id="search-box">
-		<input type="text" name="txtSearch" placeholder="enter text hear ...">
-		<input type="button" name="txtSearchIcon" value="search">
+		<s:textfield name="txtSearch" cssClass="input-text" />
+		<s:submit key="search" cssClass="btn-function" />
 	</div>
 </div>
 <div id="sb-titles">

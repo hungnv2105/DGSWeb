@@ -1,2 +1,5 @@
 * { margin: 0; padding: 0;}
 .clear {clear: both;}
+.input-text, .btn-function {
+	height: 30px;
+}
