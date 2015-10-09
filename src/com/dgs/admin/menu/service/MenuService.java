@@ -5,22 +5,38 @@ import java.util.List;
 import com.dgs.admin.menu.dao.DMenu;
 import com.dgs.admin.menu.object.MenuObject;
 import com.dgs.dao.DGException;
+import com.dgs.object.ListBeans;
+import com.dgs.object.OBean;
 import com.dgs.service.BaseService;
 
 public class MenuService extends BaseService {
 	private DMenu dao = new DMenu();
-	public List<MenuObject> getListMenu() throws DGException {
-		List<MenuObject> listMenu = null;
+	@Override
+	public ListBeans getListBeans(OBean bean) throws DGException {
+		ListBeans listBeans = null;
 		try {
 			this.startTransaction();
-			listMenu = dao.getListMenu(connection);
+			if (bean.getBeanId() == 1) {
+				listBeans = dao.getListMenu(connection, bean);
+			}
 			this.endTransaction();
 		} catch (DGException e) {
 			this.rollBackTransaction();
 		} finally {
 			this.releaseConnection();
 		}
-		return listMenu;
+		return listBeans;
+	}
+	
+	@Override
+	public OBean getBeanInfo(OBean bean) throws DGException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void doProcess(OBean bean) throws DGException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,8 +1,8 @@
 package com.dgs.admin.menu.object;
 
-import com.dgs.object.OBeen;
+import com.dgs.object.OBean;
 
-public class MenuObject extends OBeen {
+public class MenuObject extends OBean {
 	private int menuId;
 	private int appId;
 	private int parentId;

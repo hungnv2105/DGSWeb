@@ -122,7 +122,7 @@ public class DCoreImpl implements DCore {
 							+ IErrorCode.FAIL_CONNECTION_DESC);
 				}
 			} else {
-				throw new DGException("");
+				throw new DGException(errorInf + " Connection is null or closed!");
 			}
 		} catch (SQLException sqlEx) {
 			throw new DGException(sqlEx, errorInf);

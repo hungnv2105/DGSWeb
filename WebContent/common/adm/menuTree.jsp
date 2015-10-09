@@ -2,6 +2,7 @@
 <%@ include file="../../common/tags.jsp"%>
 <%@ include file="../../common/params.jsp"%>
 <div id="navigation">
+	<s:form name="">
 	<ul>
 		<li class='active'><a href='#'><span>Home</span></a></li>
 		<li class='has-sub'><a href='#'><span>Products</span></a>
@@ -32,4 +33,5 @@
 		</li>
 		<li class='last'><a href='#' ><span>Contact</span></a></li>
 	</ul>
+	</s:form>
 </div>

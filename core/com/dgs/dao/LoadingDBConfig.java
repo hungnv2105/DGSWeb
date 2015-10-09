@@ -72,13 +72,13 @@ public class LoadingDBConfig {
 					this.driver = prop.getProperty(key);
 				}
 				if (key.equals(IConstants.MAX_CONNECTIONS)) {
-					this.driver = prop.getProperty(key);
+					this.MAX_CONNECTIONS = Integer.parseInt(prop.getProperty(key));
 				}
 				if (key.equals(IConstants.INI_CONNECTIONS)) {
-					this.driver = prop.getProperty(key);
+					this.INI_CONNECTIONS = Integer.parseInt(prop.getProperty(key));
 				}
 				if (key.equals(IConstants.CONNECTION_TIME_OUT)) {
-					this.driver = prop.getProperty(key);
+					this.CONNECTION_TIME_OUT = Integer.parseInt(prop.getProperty(key));
 				}
 			}
 			
