@@ -1,15 +1,7 @@
 package com.dgs.admin.menu.action;
+import com.opensymphony.xwork2.ActionSupport;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.dgs.action.ACoreImpl;
-import com.dgs.admin.menu.object.MenuObject;
-import com.dgs.admin.menu.service.MenuService;
-import com.dgs.dao.DGException;
-import com.dgs.object.ListBeans;
-
-public class AMenu extends ACoreImpl{
+public class AMenu extends ActionSupport{
 
 	/**
 	 * author     : hungnv
@@ -17,25 +9,6 @@ public class AMenu extends ACoreImpl{
 	 */
 	private static final long serialVersionUID = -5736939767190021553L;
 	
-	public AMenu() {
-		this.bean = new MenuObject();
-		this.service = new MenuService();
-	}
-	@Override
-	public String execute() throws Exception {
-		ListBeans listMenu = new ListBeans();
-		bean.setBeanId(1);
-		listMenu = this.service.getListBeans(bean);
-		return SUCCESS;
-	}
-	
-//	public static void main(String[] args) {
-//		try {
-//			System.out.println(service.getListMenu());
-//		} catch (DGException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-
+	public String index() { return "success"; }
+	public String lion() { return "lion"; }
 }

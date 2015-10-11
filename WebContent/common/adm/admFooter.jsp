@@ -1,11 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ include file="../../common/tags.jsp"%>
+<%@ include file="../../common/params.jsp"%>
+<%-- To the right --%>
+<div class="pull-right hidden-xs">Anything you want</div>
+<%-- Default to the left --%>
+<strong>Copyright &copy; 2015 <a href="#">Company</a>.
+</strong>
+All rights reserved.

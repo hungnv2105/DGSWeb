@@ -4,8 +4,5 @@
 <struts>
 	<package name="user" extends="struts-default" namespace="/user">
 		
-		<action name="index" class="com.dgs.admin.user.action.AUser" >
-			<result name="success">/admin/layout/layoutSBC.jsp</result>
-		</action>
 	</package>
 </struts>

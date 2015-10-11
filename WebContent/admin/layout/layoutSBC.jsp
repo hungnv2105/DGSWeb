@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="../../common/tags.jsp"%>
 <%@ include file="../../common/params.jsp"%>
@@ -6,34 +6,41 @@
 <head>
 <jsp:include page="../../common/adm/setAdmin.jsp"></jsp:include>
 </head>
-<body>
-	<div id="main">
-		<div id="header">
-			<jsp:include page="../../common/adm/admHeader.jsp"></jsp:include>
+<body class="hold-transition skin-blue sidebar-mini">
+	<%-- Wrapper --%>
+	<div class="wrapper">
+	
+		<%-- Main-header --%>
+		<header class="main-header">
+			<tiles:insertAttribute name="header" />
+		</header>
+		<%-- End main-header --%>
+		
+		<%-- Main-sidebar --%>
+		<aside class="main-sidebar">
+			<tiles:insertAttribute name="sidebar" />
+		</aside>
+		<%-- End main-sidebar --%>
+		
+		<%-- Content-wrapper --%>
+		<div class="content-wrapper">
+			<tiles:insertAttribute name="contentHeader" />
+			<section class="content">
+
+          	<tiles:insertAttribute name="mainContent" />
+
+        	</section>
+        	<%-- End content --%>
 		</div>
-		<div id="content">
-			<div id="sidebar">
-				<jsp:include page="../../common/adm/admSidebar.jsp"></jsp:include>
-			</div>
-
-			<div id="wrapper">
-				<div id="menubar">
-					<jsp:include page="../../common/adm/admMenubar.jsp"></jsp:include>
-				</div>
-				<div id="new-feeds">
-					<jsp:include page="../../common/adm/admToolbar.jsp"></jsp:include>
-				</div>
-				<div id="main-content"></div>
-				<div class="clr"></div>
-			</div>
-		</div>
+		<%-- End content-wrapper --%>
+		
+		<%-- Main-footer --%>
+      	<footer class="main-footer">
+      		<tiles:insertAttribute name="footer" />
+      	</footer>
+      	<%-- End Main-footer --%>
 	</div>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		<jsp:include page="../../common/adm/admFooter.jsp"></jsp:include>
-	</div>
-</body>
+	<%-- End wrapper --%>
+	<jsp:include page="/common/adm/jsLibs.jsp"></jsp:include>
 </body>
 </html>

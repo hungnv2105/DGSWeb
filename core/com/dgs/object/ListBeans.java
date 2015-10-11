@@ -1,9 +1,8 @@
 package com.dgs.object;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class ListBeans extends ArrayList {
+public class ListBeans extends ArrayList<OBean> {
 
 	/**
 	 * author  : hungnv

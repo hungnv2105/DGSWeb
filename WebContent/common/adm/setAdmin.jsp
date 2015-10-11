@@ -1,11 +1,17 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ include file="../../common/tags.jsp"%>
 <%@ include file="../../common/params.jsp"%>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<style type="text/css">
-@import url(<%=contextPath%>/css/style.css);
-@import url(<%=contextPath%>/css/adminStyle.css);
-@import url(<%=contextPath%>/css/menuTree.css);
-</style> 
-<script type="text/javascript" src="<%= contextPath %>/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="<%= contextPath %>/js/menuTree.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+
+<title>
+    <tiles:insertAttribute name="title" ignore="true" />
+</title>
+<link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/ionicons.min.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/dist/AdminLTE.min.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/dist/skins/skin-blue.min.css" />

@@ -7,17 +7,33 @@ package com.dgs.object;
  * @author hungnv
  *
  */
-public class OBean {
-	protected int beanId;
+public abstract class OBean {
+	protected int processId;
+	protected String resMessage;
+	protected String reqMessage;
 
-	public int getBeanId() {
-		return beanId;
+	public String getResMessage() {
+		return resMessage;
 	}
 
-	public void setBeanId(int beanId) {
-		this.beanId = beanId;
+	public void setResMessage(String resMessage) {
+		this.resMessage = resMessage;
 	}
-	
-	
+
+	public String getReqMessage() {
+		return reqMessage;
+	}
+
+	public void setReqMessage(String reqMessage) {
+		this.reqMessage = reqMessage;
+	}
+
+	public int getProcessId() {
+		return processId;
+	}
+
+	public void setProcessId(int processId) {
+		this.processId = processId;
+	}
 
 }

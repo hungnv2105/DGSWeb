@@ -15,7 +15,7 @@ public class MenuService extends BaseService {
 		ListBeans listBeans = null;
 		try {
 			this.startTransaction();
-			if (bean.getBeanId() == 1) {
+			if (bean.getProcessId() == 1) {
 				listBeans = dao.getListMenu(connection, bean);
 			}
 			this.endTransaction();
@@ -36,6 +36,11 @@ public class MenuService extends BaseService {
 	public void doProcess(OBean bean) throws DGException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public ListBeans getListMenu(OBean bean) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
