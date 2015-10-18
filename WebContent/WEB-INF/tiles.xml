@@ -19,6 +19,9 @@
       <put-attribute name="title"  value="AdminIndex"/>     
    </definition>
 
-   
+   <definition name="User" extends="admBaseLayout">
+      <put-attribute name="title"  value="DGS User"/>
+      <put-attribute name="mainContent"   value="/admin/users/index.jsp"/>     
+   </definition>
   
 </tiles-definitions>

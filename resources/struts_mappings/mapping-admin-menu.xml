@@ -10,5 +10,9 @@
 			<result name="success" type="tiles">Index</result>
 		</action>
 		
+		<action name="*" class="com.dgs.admin.menu.action.AMenu" method="forward" >
+			<result name="user" type="tiles">User</result>
+		</action>
+		
 	</package>
 </struts>
