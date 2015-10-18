@@ -9,6 +9,11 @@ public class AMenu extends ActionSupport{
 	 */
 	private static final long serialVersionUID = -5736939767190021553L;
 	
-	public String index() { return "success"; }
-	public String lion() { return "lion"; }
+	public String index() {
+		return SUCCESS; 
+	}
+	
+	public String forward() {
+		return "user";
+	}
 }

@@ -33,7 +33,7 @@
 
 	<!-- Sidebar Menu -->
 	<ul class="sidebar-menu">
-		<li class="header">HEADER</li>
+		<li class="header">Administration System</li>
 		<!-- Optionally, you can add icons to the links -->
 		<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
 		<li><a href="#"><i class="fa fa-link"></i> <span>Another
@@ -52,7 +52,7 @@
                     <li>
                       <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
                       <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                        <li><s:a action="forward"><i class="fa fa-circle-o"></i>User</s:a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
                       </ul>
                     </li>
