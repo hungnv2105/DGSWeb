@@ -34,33 +34,25 @@
 	<!-- Sidebar Menu -->
 	<ul class="sidebar-menu">
 		<li class="header">Administration System</li>
-		<!-- Optionally, you can add icons to the links -->
-		<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-		<li><a href="#"><i class="fa fa-link"></i> <span>Another
-					Link</span></a></li>
-		<li class="treeview">
-              <a href="#">
-                <i class="fa fa-share"></i> <span>Multilevel</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
-                      <ul class="treeview-menu">
-                        <li><s:a action="forward"><i class="fa fa-circle-o"></i>User</s:a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-              </ul>
-            </li>
+		<s:iterator value="listGScreen">
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-share"></i><span><s:property value="groupName" /></span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<s:iterator value="listScreen">
+						<s:if test="groupId == [1].groupId">
+							<li>
+								<s:a action="changePage" ><i class="fa fa-circle-o"></i>
+									<s:property value="screenName" />
+								</s:a>
+							</li>
+						</s:if>
+					</s:iterator>
+				</ul>	
+			</li>
+		</s:iterator>
 	</ul>
 	<!-- /.sidebar-menu -->
 </section>

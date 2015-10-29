@@ -15,8 +15,6 @@ import java.sql.Types;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import org.apache.log4j.Logger;
-
 import com.dgs.inf.DCore;
 import com.dgs.inf.IErrorCode;
 
@@ -26,7 +24,6 @@ import com.dgs.inf.IErrorCode;
  */
 public class DCoreImpl implements DCore {
 
-	final static Logger LOGGER = Logger.getLogger(DCoreImpl.class);
 	private final String location = this.getClass().getName();
 
 	@Override

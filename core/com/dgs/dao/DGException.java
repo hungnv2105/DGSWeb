@@ -8,10 +8,10 @@ public class DGException extends Exception {
 	 * Author : hungnv
 	 */
 	private static final long serialVersionUID = 278461720984878629L;
-	String location = this.getClass().toString();
+	String location = this.getClass().getName();
 	
 	public DGException() {
-		
+		super();
 	}
 	
 	public DGException(String message) {

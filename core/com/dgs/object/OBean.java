@@ -11,6 +11,15 @@ public abstract class OBean {
 	protected int processId;
 	protected String resMessage;
 	protected String reqMessage;
+	protected int objId;
+
+	public int getObjId() {
+		return objId;
+	}
+
+	public void setObjId(int objId) {
+		this.objId = objId;
+	}
 
 	public String getResMessage() {
 		return resMessage;

@@ -15,3 +15,4 @@
 <link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/ionicons.min.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/dist/AdminLTE.min.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/dist/skins/skin-blue.min.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/plugins/dataTables.bootstrap.css" />
