@@ -3,69 +3,70 @@ package com.dgs.admin.menu.object;
 import com.dgs.object.OBean;
 
 public class ScreenObject extends OBean {
-	private int ScreenId;
-	private String ScreenCode;
-	private String ScreenName;
-	private int GroupId;
-	private int Type;
-	private String Action;
-	private String Link;
-	private int Order;
-	private int Status;
+	private int screenId;
+	private String screenCode;
+	private String screenName;
+	private int groupId;
+	private int type;
+	private String action;
+	private String link;
+	private int order;
+	private int status;
 	
 	public int getScreenId() {
-		return ScreenId;
+		return screenId;
+	}
+	public void setScreenId(int screenId) {
+		this.screenId = screenId;
 	}
 	public String getScreenCode() {
-		return ScreenCode;
-	}
-	public String getScreenName() {
-		return ScreenName;
-	}
-	public int getGroupId() {
-		return GroupId;
-	}
-	public int getType() {
-		return Type;
-	}
-	public String getAction() {
-		return Action;
-	}
-	public String getLink() {
-		return Link;
-	}
-	public int getOrder() {
-		return Order;
-	}
-	public int getStatus() {
-		return Status;
-	}
-	
-	public void setScreenId(int screenId) {
-		ScreenId = screenId;
+		return screenCode;
 	}
 	public void setScreenCode(String screenCode) {
-		ScreenCode = screenCode;
+		this.screenCode = screenCode;
+	}
+	public String getScreenName() {
+		return screenName;
 	}
 	public void setScreenName(String screenName) {
-		ScreenName = screenName;
+		this.screenName = screenName;
+	}
+	public int getGroupId() {
+		return groupId;
 	}
 	public void setGroupId(int groupId) {
-		GroupId = groupId;
+		this.groupId = groupId;
+	}
+	public int getType() {
+		return type;
 	}
 	public void setType(int type) {
-		Type = type;
+		this.type = type;
+	}
+	public String getAction() {
+		return action;
 	}
 	public void setAction(String action) {
-		Action = action;
+		this.action = action;
+	}
+	public String getLink() {
+		return link;
 	}
 	public void setLink(String link) {
-		Link = link;
+		this.link = link;
+	}
+	public int getOrder() {
+		return order;
 	}
 	public void setOrder(int order) {
-		Order = order;
+		this.order = order;
+	}
+	public int getStatus() {
+		return status;
 	}
 	public void setStatus(int status) {
-		Status = status;
+		this.status = status;
 	}
+	
+	
 }

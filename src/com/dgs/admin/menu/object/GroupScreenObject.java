@@ -3,28 +3,26 @@ package com.dgs.admin.menu.object;
 import com.dgs.object.OBean;
 
 public class GroupScreenObject extends OBean {
-	private int GroupId;
-	private String GroupName;
-	private int Order;
+	private int groupId;
+	private String groupName;
+	private int order;
 	
 	public int getGroupId() {
-		return GroupId;
+		return groupId;
+	}
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
 	}
 	public String getGroupName() {
-		return GroupName;
-	}
-	public int getOrder() {
-		return Order;
-	}
-	
-	public void setGroupId(int groupId) {
-		GroupId = groupId;
+		return groupName;
 	}
 	public void setGroupName(String groupName) {
-		GroupName = groupName;
+		this.groupName = groupName;
+	}
+	public int getOrder() {
+		return order;
 	}
 	public void setOrder(int order) {
-		Order = order;
+		this.order = order;
 	}
-	
 }
