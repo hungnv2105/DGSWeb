@@ -22,6 +22,7 @@ public class LoadingDBConfig {
 	protected int MAX_CONNECTIONS;
 	protected int INI_CONNECTIONS;
 	protected int CONNECTION_TIME_OUT;
+	protected int MAX_THREAD_OF_CONNECTION;
 
 	static final Logger LOGGER = Logger.getLogger(LoadingDBConfig.class);
 
@@ -79,6 +80,9 @@ public class LoadingDBConfig {
 				}
 				if (key.equals(IConstants.CONNECTION_TIME_OUT)) {
 					this.CONNECTION_TIME_OUT = Integer.parseInt(prop.getProperty(key));
+				}
+				if (key.equals(IConstants.MAX_THREAD_OF_CONNECTION)) {
+					this.MAX_THREAD_OF_CONNECTION = Integer.parseInt(prop.getProperty(key));
 				}
 			}
 			

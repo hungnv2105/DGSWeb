@@ -13,5 +13,5 @@ public interface IConstants {
 	public static final String MAX_CONNECTIONS = "MAX_CONNECTIONS";
 	public static final String INI_CONNECTIONS = "INI_CONNECTIONS";
 	public static final String CONNECTION_TIME_OUT = "CONNECTION_TIME_OUT";
-	
+	public static final String MAX_THREAD_OF_CONNECTION = "MAX_THREAD_OF_CONNECTION";
 }
