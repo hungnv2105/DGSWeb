@@ -1,6 +1,8 @@
 package com.dgs.admin.menu.object;
 
-public class ScreenObject {
+import com.dgs.object.OBean;
+
+public class ScreenObject extends OBean {
 	private int ScreenId;
 	private String ScreenCode;
 	private String ScreenName;

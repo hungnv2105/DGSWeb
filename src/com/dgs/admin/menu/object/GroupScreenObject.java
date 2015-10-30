@@ -1,6 +1,8 @@
 package com.dgs.admin.menu.object;
 
-public class GroupScreenObject {
+import com.dgs.object.OBean;
+
+public class GroupScreenObject extends OBean {
 	private int GroupId;
 	private String GroupName;
 	private int Order;
