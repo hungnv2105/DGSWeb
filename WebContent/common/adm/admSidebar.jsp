@@ -41,10 +41,10 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<s:iterator value="listScreen">
+					<s:iterator value="listScreen" status="Status">
 						<s:if test="groupId == [1].groupId">
 							<li>
-								<s:a action="changePage" ><i class="fa fa-circle-o"></i>
+								<s:a action="%{listScreen[#Status.index].action}" ><i class="fa fa-circle-o"></i>
 									<s:property value="screenName" />
 								</s:a>
 							</li>

@@ -28,7 +28,7 @@ public class DMenu extends DCoreImpl {
 	public ListBeans getListGroupScreen(Connection connection) throws DGException {
 		ListBeans result = new ListBeans();
 		StringBuilder sb = new StringBuilder();
-		sb.append("select * from group_screen");
+		sb.append("select * from group_screen order by ord");
 		ResultSet rs = this.executeQuery(connection, sb.toString(), null);
 		getGroupScreenObject(rs, result);
 		return result;
@@ -37,7 +37,7 @@ public class DMenu extends DCoreImpl {
 	public ListBeans getListScreen(Connection connection) throws DGException {
 		ListBeans result = new ListBeans();
 		StringBuilder sb = new StringBuilder();
-		sb.append("select * from screen");
+		sb.append("select * from screen order by ord");
 		ResultSet rs = this.executeQuery(connection, sb.toString(), null);
 		getScreenObject(rs, result);
 		return result;
@@ -52,11 +52,11 @@ public class DMenu extends DCoreImpl {
 				scrObj.setScreenId(rs.getInt("screen_id"));
 				scrObj.setScreenCode(rs.getString("screen_code"));
 				scrObj.setScreenName(rs.getString("screen_name"));
-				scrObj.setGroupId(rs.getInt("group"));
+				scrObj.setGroupId(rs.getInt("groupId"));
 				scrObj.setType(rs.getInt("type"));
 				scrObj.setAction(rs.getString("action"));
 				scrObj.setLink(rs.getString("link"));
-				scrObj.setOrder(rs.getInt("order"));
+				scrObj.setOrder(rs.getInt("ord"));
 				scrObj.setStatus(rs.getInt("status"));
 				list.add(scrObj);		
 			}
@@ -73,7 +73,7 @@ public class DMenu extends DCoreImpl {
 				grObj = new GroupScreenObject();
 				grObj.setGroupId(rs.getInt("group_id"));
 				grObj.setGroupName(rs.getString("group_name"));
-				grObj.setOrder(rs.getInt("order"));
+				grObj.setOrder(rs.getInt("ord"));
 				list.add(grObj);		
 			}
 		} catch (SQLException sqlEx) {

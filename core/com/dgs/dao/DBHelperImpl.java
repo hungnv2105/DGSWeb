@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import org.apache.log4j.Logger;
@@ -173,9 +174,6 @@ public class DBHelperImpl extends LoadingDBConfig implements DBHelper {
 			sb.append("&password=");
 			sb.append(this.dbPass);
 			conn = DriverManager.getConnection(sb.toString());
-			if (conn != null) {
-				conn.setNetworkTimeout(Executors.newFixedThreadPool(this.MAX_THREAD_OF_CONNECTION), this.CONNECTION_TIME_OUT);
-			}
 		} catch (ClassNotFoundException e) {
 			throw new DGException(e, errorInf);
 		} catch (Exception e) {
