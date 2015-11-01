@@ -12,22 +12,21 @@
 	
 		<%-- Main-header --%>
 		<header class="main-header">
-			<tiles:insertAttribute name="header" />
+			<jsp:include page="../../common/adm/admHeader.jsp"></jsp:include>
 		</header>
 		<%-- End main-header --%>
 		
 		<%-- Main-sidebar --%>
 		<aside class="main-sidebar">
-			<tiles:insertAttribute name="sidebar" />
+			<jsp:include page="../../common/adm/admSidebar.jsp"></jsp:include>
 		</aside>
 		<%-- End main-sidebar --%>
 		
 		<%-- Content-wrapper --%>
 		<div class="content-wrapper">
-			<tiles:insertAttribute name="contentHeader" />
+			<jsp:include page="../../common/adm/admContentHeader.jsp"></jsp:include>
 			<section class="content">
 
-          	<tiles:insertAttribute name="mainContent" />
 
         	</section>
         	<%-- End content --%>
@@ -36,7 +35,7 @@
 		
 		<%-- Main-footer --%>
       	<footer class="main-footer">
-      		<tiles:insertAttribute name="footer" />
+      		<jsp:include page="../../common/adm/admHeader.jsp"></jsp:include>
       	</footer>
       	<%-- End Main-footer --%>
 	</div>

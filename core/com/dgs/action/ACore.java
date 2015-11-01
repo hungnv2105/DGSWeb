@@ -20,5 +20,13 @@ public abstract class ACore extends ActionSupport implements ModelDriven<OBean> 
 	
 	protected HttpServletRequest request;
 	protected HttpServletResponse response;
+	protected String pageForward;
+	
+	public String getPageForward() {
+		return pageForward;
+	}
+	public void setPageForward(String pageForward) {
+		this.pageForward = pageForward;
+	}
 	
 }

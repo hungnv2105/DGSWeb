@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import com.dgs.action.ACore;
 import com.dgs.admin.menu.object.ScreenObject;
 import com.dgs.admin.menu.service.MenuService;
+import com.dgs.dao.DGException;
 import com.dgs.object.ListBeans;
 import com.dgs.object.OBean;
 
@@ -47,6 +48,12 @@ public class AMenu extends ACore{
 	}
 	
 	public String viewUserPage() {
+		this.pageForward = "viewUserPage";
+		return SUCCESS;
+	}
+	
+	public String viewRolePage() {
+		this.pageForward = "viewRolePage";
 		return SUCCESS;
 	}
 

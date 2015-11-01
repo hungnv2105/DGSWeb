@@ -8,19 +8,33 @@ import com.dgs.service.BaseService;
 public class MenuService extends BaseService {
 	private DMenu dao = new DMenu();
 
-	public ListBeans getListGroupScreen() throws DGException {
+	public ListBeans getListGroupScreen() throws DGException{
 		ListBeans list = new ListBeans();
-		startTransaction();
-		list = dao.getListGroupScreen(this.connection);
-		endTransaction();
+		try {
+			startTransaction();
+			list = dao.getListGroupScreen(this.connection);
+			endTransaction();
+		} catch (DGException e) {
+			rollBackTransaction();
+			logger.info(e);
+		} finally {
+			releaseConnection();
+		}
 		return list;
 	}
 
 	public ListBeans getListScreen() throws DGException {
 		ListBeans list = new ListBeans();
-		startTransaction();
-		list = dao.getListScreen(this.connection);
-		endTransaction();
+		try {
+			startTransaction();
+			list = dao.getListScreen(this.connection);
+			endTransaction();
+		} catch (DGException e) {
+			rollBackTransaction();
+			logger.info(e);
+		} finally {
+			releaseConnection();
+		}
 		return list;
 	}
 
