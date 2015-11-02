@@ -6,9 +6,8 @@
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
-
 <title>
-    <tiles:insertAttribute name="title" ignore="true" />
+    DGSWeb
 </title>
 <link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/font-awesome.min.css" />
@@ -16,3 +15,4 @@
 <link rel="stylesheet" href="<%=contextPath%>/css/dist/AdminLTE.min.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/dist/skins/skin-blue.min.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/plugins/dataTables.bootstrap.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/style.css" />

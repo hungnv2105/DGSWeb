@@ -33,7 +33,7 @@ function loadAjax(url, position, data, method, dataType) {
 	var request = {
 		url : url,
 		type : method,
-		contentType:'application/x-www-form-urlencoded',
+		contentType : 'application/x-www-form-urlencoded',
 		dataType : dataType,
 		data : data,
 		success : function(html) {
@@ -50,14 +50,17 @@ function parseData(param, postForm) {
 
 	// get data from postForm
 	if (postForm != undefined && postForm != null) {
-		$(postForm).each(function() {
-			var obj = $(this).find(':input');
-			if (obj != undefined && obj != null) {
-				var paramName = obj.name != '' ? obj.name : obj.id;
-				var paramValue = obj.val();
-				strOject += "\"" + paramName + "\":\"" + paramValue + "\",";
-			}
-		});
+		$(postForm).each(
+				function() {
+					var obj = $(this).find(':input');
+					if (obj != undefined && obj != null) {
+						var paramName = obj.name != '' ? obj.name : obj.id;
+						var paramValue = obj.val();
+						if (paramName != undefined && paramValue != undefined) {
+							strOject += "\"" + paramName + "\":\"" + paramValue + "\",";
+						}
+					}
+				});
 	}
 
 	// get data from param
@@ -72,7 +75,7 @@ function parseData(param, postForm) {
 			}
 		}
 	}
-	strOject = strOject.substring(0,strOject.length - 1);
+	strOject = strOject.substring(0, strOject.length - 1);
 	strOject += "}";
 
 	data = jQuery.parseJSON(strOject);

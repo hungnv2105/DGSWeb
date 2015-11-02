@@ -38,4 +38,19 @@ public class MenuService extends BaseService {
 		return list;
 	}
 
+	public ListBeans getListUsers() throws DGException {
+		ListBeans list = new ListBeans();
+		try {
+			startTransaction();
+			list = dao.getListUsers(this.connection);
+			endTransaction();
+		} catch (DGException e) {
+			rollBackTransaction();
+			logger.info(e);
+		} finally {
+			releaseConnection();
+		}
+		return list;
+	}
+
 }

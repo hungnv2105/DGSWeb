@@ -9,21 +9,59 @@ import com.dgs.dao.DGException;
 import com.dgs.object.ListBeans;
 import com.dgs.object.OBean;
 
-public class AMenu extends ACore{
+public class AMenu extends ACore implements IMenuKey {
 
 	/**
-	 * author     : hungnv
-	 * created on : 06/10/2015
+	 * author : hungnv created on : 06/10/2015
 	 */
 	private static final long serialVersionUID = -5736939767190021553L;
-	
+
 	private OBean bean = new ScreenObject();
 	private MenuService service = new MenuService();
 	final static Logger LOGGER = Logger.getLogger(AMenu.class);
-	
+
 	private ListBeans listGScreen;
 	private ListBeans listScreen;
-	
+	private ListBeans listBeans;
+
+	@Override
+	public String execute() {
+		try {
+			listGScreen = service.getListGroupScreen();
+			listScreen = service.getListScreen();
+		} catch (DGException e) {
+			e.printStackTrace();
+			LOGGER.error(e);
+		}
+		return SUCCESS;
+	}
+
+	public String changePage() {
+		try {
+			if (this.pageForward.equalsIgnoreCase(VIEW_USER_PAGE)) {
+				listBeans = service.getListUsers();
+			}
+		} catch (DGException e) {
+			e.printStackTrace();
+			LOGGER.error(e);
+		}
+		return SUCCESS;
+	}
+
+	@Override
+	public OBean getModel() {
+		// TODO Auto-generated method stub
+		return bean;
+	}
+
+	public ListBeans getListBeans() {
+		return listBeans;
+	}
+
+	public void setListBeans(ListBeans listBeans) {
+		this.listBeans = listBeans;
+	}
+
 	public ListBeans getListGScreen() {
 		return listGScreen;
 	}
@@ -38,23 +76,6 @@ public class AMenu extends ACore{
 
 	public void setListScreen(ListBeans listScreen) {
 		this.listScreen = listScreen;
-	}
-
-	@Override
-	public String execute() throws Exception {
-		listGScreen = service.getListGroupScreen();
-		listScreen = service.getListScreen();
-		return SUCCESS;
-	}
-	
-	public String changePage() {
-		return SUCCESS;
-	}
-
-	@Override
-	public OBean getModel() {
-		// TODO Auto-generated method stub
-		return bean;
 	}
 
 }
