@@ -8,7 +8,7 @@
 			<result name="success">/admin/layout/layoutSBC.jsp</result>
 		</action>
 
-		<action name="*Index" class="com.dgs.admin.menu.action.AMenu" method="{1}">
+		<action name="changePage" class="com.dgs.admin.menu.action.AMenu" method="changePage">
 			<result name="success" type="redirectAction">${pageForward}</result>
 		</action>
 		

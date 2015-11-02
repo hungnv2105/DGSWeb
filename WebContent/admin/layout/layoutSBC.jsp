@@ -26,7 +26,9 @@
 		<div class="content-wrapper">
 			<jsp:include page="../../common/adm/admContentHeader.jsp"></jsp:include>
 			<section class="content">
-
+			<div id="mainContent">
+				
+			</div>
 
         	</section>
         	<%-- End content --%>

@@ -47,13 +47,7 @@ public class AMenu extends ACore{
 		return SUCCESS;
 	}
 	
-	public String viewUserPage() {
-		this.pageForward = "viewUserPage";
-		return SUCCESS;
-	}
-	
-	public String viewRolePage() {
-		this.pageForward = "viewRolePage";
+	public String changePage() {
 		return SUCCESS;
 	}
 

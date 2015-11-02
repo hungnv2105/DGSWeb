@@ -32,28 +32,26 @@
 	<!-- /.search form -->
 
 	<!-- Sidebar Menu -->
+	<s:form name="menuForm" action="changePage.html">
 	<ul class="sidebar-menu">
 		<li class="header">Administration System</li>
 		<s:iterator value="listGScreen">
-			<li class="treeview">
-				<a href="#">
-					<i class="fa fa-share"></i><span><s:property value="groupName" /></span>
-					<i class="fa fa-angle-left pull-right"></i>
-				</a>
+			<li class="treeview"><a href="#"> <i class="fa fa-share"></i><span><s:property
+							value="groupName" /></span> <i class="fa fa-angle-left pull-right"></i>
+			</a>
 				<ul class="treeview-menu">
 					<s:iterator value="listScreen" status="Status">
 						<s:if test="groupId == [1].groupId">
-							<li>
-								<s:a action="%{listScreen[#Status.index].action}" ><i class="fa fa-circle-o"></i>
+							<li><s:a href="#" onclick="postAjax('menuForm', 'mainContent', 'pageForward:'+ '%{listScreen[#Status.index].action}');">
+									<i class="fa fa-circle-o"></i>
 									<s:property value="screenName" />
-								</s:a>
-							</li>
+								</s:a></li>
 						</s:if>
 					</s:iterator>
-				</ul>	
-			</li>
+				</ul></li>
 		</s:iterator>
 	</ul>
+	</s:form>
 	<!-- /.sidebar-menu -->
 </section>
 <!-- /.sidebar -->
