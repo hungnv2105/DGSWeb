@@ -9,37 +9,31 @@
 <body class="hold-transition skin-blue sidebar-mini">
 	<%-- Wrapper --%>
 	<div class="wrapper">
-	
+
 		<%-- Main-header --%>
-		<header class="main-header">
-			<jsp:include page="../../common/adm/admHeader.jsp"></jsp:include>
-		</header>
+		<header class="main-header"> <jsp:include
+			page="../../common/adm/admHeader.jsp"></jsp:include> </header>
 		<%-- End main-header --%>
-		
+
 		<%-- Main-sidebar --%>
-		<aside class="main-sidebar">
-			<jsp:include page="../../common/adm/admSidebar.jsp"></jsp:include>
-		</aside>
+		<aside class="main-sidebar"> <jsp:include
+			page="../../common/adm/admSidebar.jsp"></jsp:include> </aside>
 		<%-- End main-sidebar --%>
-		
+
 		<%-- Content-wrapper --%>
 		<div class="content-wrapper">
 			<jsp:include page="../../common/adm/admContentHeader.jsp"></jsp:include>
 			<section class="content">
-			<div id="mainContent">
-				
-			</div>
-
-        	</section>
-        	<%-- End content --%>
+				<div id="mainContent"></div>
+			</section>
+			<%-- End content --%>
 		</div>
 		<%-- End content-wrapper --%>
-		
+
 		<%-- Main-footer --%>
-      	<footer class="main-footer">
-      		<jsp:include page="../../common/adm/admHeader.jsp"></jsp:include>
-      	</footer>
-      	<%-- End Main-footer --%>
+		<footer class="main-footer"> <jsp:include
+			page="../../common/adm/admHeader.jsp"></jsp:include> </footer>
+		<%-- End Main-footer --%>
 	</div>
 	<%-- End wrapper --%>
 	<jsp:include page="/common/adm/jsLibs.jsp"></jsp:include>

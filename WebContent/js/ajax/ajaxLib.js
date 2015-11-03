@@ -10,7 +10,7 @@ function postAjax(formName, position, param) {
 	} else {
 		actionURL = formName;
 	}
-	var data = parseData(param, postForm);
+	var data = parseData(param, formName);
 	position = "#" + position;
 	loadAjax(actionURL, position, data, 'POST', 'html');
 }
@@ -23,7 +23,7 @@ function getAjax(formName, position, param) {
 	} else {
 		actionURL = formName;
 	}
-	var data = parseData(param, postForm);
+	var data = parseData(param, formName);
 
 	loadAjax(actionURL, position, data, 'GET', 'html');
 }
@@ -33,30 +33,29 @@ function loadAjax(url, position, data, method, dataType) {
 	var request = {
 		url : url,
 		type : method,
-		contentType : 'application/x-www-form-urlencoded',
 		dataType : dataType,
 		data : data,
-		success : function(html) {
-			$(position).html(html);
+		success : function(result) {
+			$(position).html(result);
 		}
 	};
 	$.ajax(request);
 	console.log(request.data);
 }
 
-function parseData(param, postForm) {
+function parseData(param, formName) {
 	var data = {};
 	var strOject = "{";
 
 	// get data from postForm
-	if (postForm != undefined && postForm != null) {
-		$(postForm).each(
+	if (formName != undefined && formName != null) {
+		$($('form[name=' + formName + '] :input')).each(
 				function() {
-					var obj = $(this).find(':input');
+					var obj = $(this);
 					if (obj != undefined && obj != null) {
-						var paramName = obj.name != '' ? obj.name : obj.id;
+						var paramName = obj.attr('name') != '' ? obj.attr('name') : obj.attr('id');
 						var paramValue = obj.val();
-						if (paramName != undefined && paramValue != undefined) {
+						if (paramName != undefined) {
 							strOject += "\"" + paramName + "\":\"" + paramValue + "\",";
 						}
 					}

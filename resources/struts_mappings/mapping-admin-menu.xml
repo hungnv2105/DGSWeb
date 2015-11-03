@@ -2,21 +2,15 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="admin" extends="struts-default" namespace="/admin">
+	<package name="menu" extends="struts-default" namespace="/admin">
 	
 		<action name="index" class="com.dgs.admin.menu.action.AMenu">
 			<result name="success">/admin/layout/layoutSBC.jsp</result>
 		</action>
 
 		<action name="changePage" class="com.dgs.admin.menu.action.AMenu" method="changePage">
-			<result name="success" type="redirectAction">${pageForward}</result>
-		</action>
-		
-		<action name="viewUserPage">
-			<result>/admin/users/index.jsp</result>
-		</action>
-		<action name="viewRolePage">
-			<result>/admin/role/index.jsp</result>
+			<result name="viewUserPage">/admin/users/index.jsp</result>
+			<result name="viewRolePage">/admin/role/index.jsp</result>
 		</action>
 
 	</package>

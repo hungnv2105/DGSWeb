@@ -1,14 +1,17 @@
 package com.dgs.admin.user.action;
 
 import com.dgs.action.ACore;
-import com.dgs.admin.menu.object.ScreenObject;
-import com.dgs.object.OBean;
+import com.dgs.admin.user.object.UserObject;
 
 public class AUser extends ACore {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8679269603044190079L;
 	
-	private OBean bean = new ScreenObject();
+	private UserObject bean = new UserObject();
+
+	public String addUser() throws Exception {
+		return SUCCESS;
+	}
 	
 	@Override
 	public String execute() throws Exception {
@@ -16,7 +19,7 @@ public class AUser extends ACore {
 	}
 
 	@Override
-	public OBean getModel() {
+	public UserObject getModel() {
 		// TODO Auto-generated method stub
 		return bean;
 	}

@@ -12,7 +12,8 @@ import com.dgs.object.OBean;
 public class AMenu extends ACore implements IMenuKey {
 
 	/**
-	 * author : hungnv created on : 06/10/2015
+	 * author : hungnv 
+	 * created on : 06/10/2015
 	 */
 	private static final long serialVersionUID = -5736939767190021553L;
 
@@ -20,15 +21,22 @@ public class AMenu extends ACore implements IMenuKey {
 	private MenuService service = new MenuService();
 	final static Logger LOGGER = Logger.getLogger(AMenu.class);
 
-	private ListBeans listGScreen;
-	private ListBeans listScreen;
+	private ListBeans listGroup;
 	private ListBeans listBeans;
+	private String pageForward;
+
+	public String getPageForward() {
+		return pageForward;
+	}
+	public void setPageForward(String pageForward) {
+		this.pageForward = pageForward;
+	}
 
 	@Override
 	public String execute() {
 		try {
-			listGScreen = service.getListGroupScreen();
-			listScreen = service.getListScreen();
+			listGroup = service.getListGroupScreen();
+			listBeans = service.getListScreen();
 		} catch (DGException e) {
 			e.printStackTrace();
 			LOGGER.error(e);
@@ -38,14 +46,16 @@ public class AMenu extends ACore implements IMenuKey {
 
 	public String changePage() {
 		try {
-			if (this.pageForward.equalsIgnoreCase(VIEW_USER_PAGE)) {
+			if (this.pageForward.equals(VIEW_USER_PAGE)) {
 				listBeans = service.getListUsers();
+			} else if (this.pageForward.equals(VIEW_ROLE_PAGE)) {
+				listBeans = new ListBeans();
 			}
 		} catch (DGException e) {
 			e.printStackTrace();
 			LOGGER.error(e);
 		}
-		return SUCCESS;
+		return this.pageForward;
 	}
 
 	@Override
@@ -62,20 +72,11 @@ public class AMenu extends ACore implements IMenuKey {
 		this.listBeans = listBeans;
 	}
 
-	public ListBeans getListGScreen() {
-		return listGScreen;
+	public ListBeans getListGroup() {
+		return listGroup;
 	}
 
-	public void setListGScreen(ListBeans listGScreen) {
-		this.listGScreen = listGScreen;
+	public void setListGroup(ListBeans listGroup) {
+		this.listGroup = listGroup;
 	}
-
-	public ListBeans getListScreen() {
-		return listScreen;
-	}
-
-	public void setListScreen(ListBeans listScreen) {
-		this.listScreen = listScreen;
-	}
-
 }
