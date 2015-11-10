@@ -11,6 +11,7 @@
 		<action name="changePage" class="com.dgs.admin.menu.action.AMenu" method="changePage">
 			<result name="viewUserPage">/admin/users/index.jsp</result>
 			<result name="viewRolePage">/admin/role/index.jsp</result>
+			<result name="viewManageProductPage">/admin/product/index.jsp</result>
 		</action>
 
 	</package>
