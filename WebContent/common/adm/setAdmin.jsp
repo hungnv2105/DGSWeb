@@ -16,3 +16,4 @@
 <link rel="stylesheet" href="<%=contextPath%>/css/dist/skins/skin-blue.min.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/plugins/dataTables.bootstrap.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/style.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/plugins/datepicker3.css" />

@@ -28,13 +28,22 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="reservation" class="col-sm-2 control-label">Khoang thoi gian</label>
+					<label for="startDate" class="col-sm-2 control-label">Tu ngay</label>
 					<div class="col-sm-4">
 						<div class="input-group">
 							<div class="input-group-addon">
 								<i class="fa fa-calendar"></i>
 							</div>
-							<input name="reservation" type="text" class="form-control pull-right" id="reservation" />
+							<input name="startDate" type="text" class="form-control pull-right datepicker" id="startDate" />
+						</div>
+					</div>
+					<label for="endDate" class="col-sm-2 control-label">Den ngay</label>
+					<div class="col-sm-4">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<i class="fa fa-calendar"></i>
+							</div>
+							<input name="endDate" type="text" class="form-control pull-right datepicker" id="endDate" />
 						</div>
 					</div>
 				</div>
@@ -45,3 +54,11 @@
 		</div>
 	</div>
 </s:form>
+<script>
+	$(function() {
+		//Date picker
+		$('.datepicker').datepicker({
+		    language: 'vi'
+		});
+	});
+</script>

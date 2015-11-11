@@ -6,4 +6,6 @@
 <script src="<%=contextPath%>/js/dist/app.min.js"></script>
 <script src="<%=contextPath%>/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<%=contextPath%>/js/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<%=contextPath%>/js/plugins/datepickers/bootstrap-datepicker.js"></script>
+<script src="<%=contextPath%>/js/plugins/datepickers/bootstrap-datepicker.vi.js"></script>
 <script src="<%=contextPath%>/js/ajax/ajaxLib.js"></script>
