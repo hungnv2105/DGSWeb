@@ -1,18 +1,25 @@
 package com.dgs.admin.menu.service;
 
+import com.dgs.admin.inf.IKeyProcess;
 import com.dgs.admin.menu.dao.DMenu;
 import com.dgs.dao.DGException;
-import com.dgs.object.ListBeans;
+import com.dgs.object.OBean;
+import com.dgs.object.ResponseObj;
 import com.dgs.service.BaseService;
 
 public class MenuService extends BaseService {
 	private DMenu dao = new DMenu();
-
-	public ListBeans getListGroupScreen() throws DGException{
-		ListBeans list = new ListBeans();
+	private ResponseObj responseObj = new ResponseObj();
+	
+	@Override
+	public ResponseObj process(OBean bean) throws DGException {
 		try {
 			startTransaction();
-			list = dao.getListGroupScreen(this.connection);
+			if (bean.getProcessId() == IKeyProcess.GET_LIST_BEANS) {
+				responseObj.setListResponse(dao.getListScreen(this.connection));
+			} else if (bean.getProcessId() == IKeyProcess.GET_LIST_GROUP) {
+				responseObj.setListResponse(dao.getListGroupScreen(this.connection));
+			}
 			endTransaction();
 		} catch (DGException e) {
 			rollBackTransaction();
@@ -20,37 +27,6 @@ public class MenuService extends BaseService {
 		} finally {
 			releaseConnection();
 		}
-		return list;
+		return responseObj;
 	}
-
-	public ListBeans getListScreen() throws DGException {
-		ListBeans list = new ListBeans();
-		try {
-			startTransaction();
-			list = dao.getListScreen(this.connection);
-			endTransaction();
-		} catch (DGException e) {
-			rollBackTransaction();
-			logger.info(e);
-		} finally {
-			releaseConnection();
-		}
-		return list;
-	}
-
-	public ListBeans getListUsers() throws DGException {
-		ListBeans list = new ListBeans();
-		try {
-			startTransaction();
-			list = dao.getListUsers(this.connection);
-			endTransaction();
-		} catch (DGException e) {
-			rollBackTransaction();
-			logger.info(e);
-		} finally {
-			releaseConnection();
-		}
-		return list;
-	}
-
 }

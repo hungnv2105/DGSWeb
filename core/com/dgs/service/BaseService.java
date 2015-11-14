@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import com.dgs.dao.DBHelperImpl;
 import com.dgs.dao.DGException;
 import com.dgs.inf.DBHelper;
+import com.dgs.object.OBean;
+import com.dgs.object.ResponseObj;
 
 public abstract class BaseService {
 	protected Connection connection;
@@ -33,5 +35,6 @@ public abstract class BaseService {
 	protected void releasePool() throws DGException {
 		dbHelper.release();
 	}
-
+	
+	public abstract ResponseObj process(OBean bean) throws DGException;
 }

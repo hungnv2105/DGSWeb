@@ -22,7 +22,7 @@ import com.dgs.inf.IErrorCode;
  * @author hungnv
  *
  */
-public class DCoreImpl implements DCore {
+public abstract class DCoreImpl implements DCore {
 
 	private final String location = this.getClass().getName();
 
@@ -163,5 +163,18 @@ public class DCoreImpl implements DCore {
 			}
 		}
 	}
-
+	
+	@Override
+	public void releaseResultSet(ResultSet rs) {
+		if (rs!=null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			finally {
+				rs = null;
+			}
+		}
+	}
 }

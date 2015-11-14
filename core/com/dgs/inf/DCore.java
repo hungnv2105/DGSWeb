@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.HashMap;
 
 import com.dgs.dao.DGException;
+import com.dgs.object.ListBeans;
 
 public interface DCore {
 	
@@ -15,4 +16,6 @@ public interface DCore {
 	public ResultSet executeQuery(PreparedStatement prstm) throws DGException;
 	public ResultSet executeQuery(Connection conn, String query, HashMap<Integer, Object> prstmParams) throws DGException;
 	public ResultSet executeSP(Connection conn, String callableStatement, HashMap<Integer, Object> prstmParams) throws DGException;
+	public ListBeans getObjectInfo(ResultSet rs) throws DGException;
+	public void releaseResultSet(ResultSet rs);
 }

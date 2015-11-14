@@ -11,11 +11,12 @@
 				<table id="tableViewData" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>UserID</th>
-							<th>User name</th>
-							<th>Full name</th>
-							<th>Email</th>
-							<th>Status</th>
+							<th>Ma san pham</th>
+							<th>Ten san pham</th>
+							<th>Nhom san pham</th>
+							<th>Ngay cap nhat</th>
+							<th>Trang thai</th>
+							<th>Chuc nang</th>
 						</tr>
 					</thead>
 					<s:iterator value="listBeans" status="beanStatus">
@@ -24,6 +25,7 @@
 							<td><s:property value="userName" /></td>
 							<td><s:property value="fullName" /></td>
 							<td><s:property value="email" /></td>
+							<td><s:property value="status" /></td>
 							<td><s:property value="status" /></td>
 						</tr>
 					</s:iterator>
