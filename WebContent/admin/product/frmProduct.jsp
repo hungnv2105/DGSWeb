@@ -8,7 +8,7 @@
 		<div class="form-horizontal">
 			<div class="box-body">
 				<div class="form-group">
-					<label for="productParent" class="col-sm-2 control-label">Loai san pham</label>
+					<label for="productParent" class="col-sm-2 control-label"><s:property value="getText('product.category')"/></label>
 					<div class="col-sm-4">
 						<select class="form-control" name="productParent" id="productParent"></select>
 					</div>

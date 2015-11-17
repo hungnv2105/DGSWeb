@@ -20,7 +20,7 @@ public class AMenu extends ACore implements IMenuKey {
 	 */
 	private static final long serialVersionUID = -5736939767190021553L;
 
-	private OBean bean = new ScreenObject();
+	private ScreenObject bean = new ScreenObject();
 	private BaseService service = null;
 	final static Logger LOGGER = Logger.getLogger(AMenu.class);
 
@@ -34,6 +34,7 @@ public class AMenu extends ACore implements IMenuKey {
 		return pageForward;
 	}
 	public void setPageForward(String pageForward) {
+		request.setAttribute("request_locale", "vi_VN");
 		this.pageForward = pageForward;
 	}
 
