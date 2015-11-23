@@ -1,0 +1,304 @@
+﻿<! DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anh Hoan | Design Branding</title>
+
+<link href="css/layout.css" type="text/css" rel="stylesheet"
+	media="screen" />
+<link rel="stylesheet" href="css/themes/default/default.css"
+	type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/slick.css" type="text/css"
+	media="screen" />
+
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+			$(window).load(function() {
+				$('#slider').nivoSlider();
+			});
+		</script>
+<script type="text/javascript">
+			function account_click(){
+				var dpl = $("#account").css('display');
+				if(dpl === 'none'){
+					$("#account").show(300);
+				}else{
+					$("#account").hide(300);
+				} 
+			}
+		</script>
+</head>
+
+<body>
+	<form>
+		<header id="header">
+			<div class="wrapper">
+				<ul class="header">
+					<li><a href="#">Tiếng Việt</a></li>
+					<li><a href="#" onclick="account_click()">Đăng nhập</a>
+						<ul id="account">
+							<li class="arrow"></li>
+							<li><input type="text" name="txtUserName"
+								placeholder="Tên đăng nhập..." /></li>
+							<li><input type="password" name="txtPassword"
+								placeholder="Mật khẩu..." /></li>
+							<li><input type="button" name="btnLogin" class="btnlogin"
+								value="Đăng nhập" /></li>
+							<li><input type="checkbox" id="chksave" name="chkSave"
+								class="chksave" /> <label for="chksave">Ghi nhớ</label> <a
+								href="#">Quên mật khẩu?</a></li>
+							<li><a href="#">Tạo tài khoản</a></li>
+						</ul></li>
+					<li><a href="#">01658909775</a></li>
+				</ul>
+				<!-- end .header-->
+
+				<div class="banner">
+					<div class="logo">
+						<h4 title="Anh Hoan">
+							<a href="#"><img src="images/logo.png" alt="Anh Hoan" /></a>
+						</h4>
+					</div>
+					<div class="search">
+						<ul>
+							<li><a href="#"><img src="images/f.png" /></a></li>
+							<li><a href="#"><img src="images/g.png" /></a></li>
+							<li><a href="#"><img src="images/t.png" /></a></li>
+							<li><a href="#"><img src="images/p.png" /></a></li>
+							<li><a href="#"><img src="images/h.png" /></a></li>
+						</ul>
+						<form>
+							<input type="text" class="txtsearch" placeholder="Tìm kiếm..." />
+							<input type="button" class="btnsearch" />
+							<form>
+					</div>
+				</div>
+				<!-- end .banner-->
+
+				<ul id="navbar">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Sản phẩm</a>
+						<ul>
+							<li class="arrow"></li>
+							<li class="margin-top-12"><a href="#">Nhận diện văn
+									phòng</a>
+								<ul>
+									<li><a href="#">Logo</a></li>
+									<li><a href="#">Card visit</a></li>
+									<li><a href="#">Tiêu đề thư</a></li>
+									<li><a href="#">Phòng bì A4, A5</a></li>
+									<li><a href="#">Kẹp profile</a></li>
+									<li><a href="#">Hóa đơn, phiếu thu</a></li>
+									<li><a href="#">Thẻ nhân viên</a></li>
+									<li><a href="#">Phiếu bảo hành</a></li>
+									<li><a href="#">Giấy mời, thiệp chúc</a></li>
+									<li><a href="#">Bìa đĩa, nhãn đĩa</a></li>
+								</ul></li>
+							<li><a href="#">Quảng cáo truyền thông</a>
+								<ul>
+									<li><a href="#">Tờ rơi, tờ gấp</a></li>
+									<li><a href="#">Poster quảng cáo</a></li>
+									<li><a href="#">Đồng phục nhân viên</a></li>
+									<li><a href="#">Bandol, standee</a></li>
+								</ul></li>
+							<li><a href="#">Biển bảng</a>
+								<ul>
+									<li><a href="#">Biển hiệu</a></li>
+									<li><a href="#">Biển chỉ dẫn</a></li>
+									<li><a href="#">Quầy tiếp tân</a></li>
+									<li><a href="#">Banner</a></li>
+								</ul></li>
+							<li><a href="#">Bao bì, nhãn mác</a>
+								<ul>
+									<li><a href="#">Bao bì, tem, nhãn</a></li>
+									<li><a href="#">Túi giấy</a></li>
+								</ul></li>
+							<li><a href="#">Thương mại điện tử</a>
+								<ul>
+									<li><a href="#">Giao diện website</a></li>
+								</ul></li>
+							<li><a href="#">Marketing</a>
+								<ul>
+									<li><a href="#">Infographic</a></li>
+								</ul></li>
+						</ul></li>
+					<li><a href="#">Đặt thiết kết</a></li>
+					<li><a href="#">Hướng dẫn</a></li>
+					<li><a href="#">Quy trình</a></li>
+					<li><a href="#">Tin tức</a></li>
+					<li><a href="#">Giới thiệu</a></li>
+					<li><a href="#">Liên hệ</a></li>
+				</ul>
+
+				<div class="intro">
+					<div class="slider-wrapper theme-default">
+						<div id="slider" class="nivoSlider">
+							<img src="images/slider1.png" data-thumb="images/slider1.png"
+								alt="" /> <a href="#"><img src="images/slider2.png"
+								data-thumb="images/slider2.png" alt=""
+								title="This is an example of a caption" /></a> <img
+								src="images/slider3.png" data-thumb="images/slider3.png" alt=""
+								data-transition="slideInLeft" />
+						</div>
+						<div id="htmlcaption" class="nivo-html-caption">
+							<strong>This</strong> is an example of a <em>HTML</em> caption
+							with <a href="#">a link</a>.
+						</div>
+					</div>
+				</div>
+				<!-- end .intro-->
+
+				<br class="clear" />
+			</div>
+			<!-- end .wrapper-->
+		</header>
+		<!-- end #header-->
+
+		<div id="service">
+			<ul class="menu_product">
+				<li class="product_left"></li>
+				<li class="product_center"><span class="title-product">Sản
+						phẩm</span>
+					<div class="variable-width">
+						<h4>
+							<a href="#">Nhận diện văn phòng</a>
+						</h4>
+						<h4>
+							<a href="#">Quảng cáo truyền thông</a>
+						</h4>
+						<h4>
+							<a href="#">Biển bảng</a>
+						</h4>
+						<h4>
+							<a href="#">Bao bì, nhãn mác</a>
+						</h4>
+						<h4>
+							<a href="#">Thương mại điện tử</a>
+						</h4>
+						<h4>
+							<a href="#">Marketing</a>
+						</h4>
+					</div> <script type="text/javascript" src="js/slick.min.js"></script> <script
+						type="text/javascript">
+							$(document).ready(function(){
+								$('.variable-width').slick({
+									infinite: false,
+									speed: 400,
+									slidesToShow: 4,
+									slidesToScroll: 2,
+									centerMode: false,
+									variableWidth: true,
+									dots: false,
+								});
+							});
+						</script></li>
+				<li class="product_right"></li>
+			</ul>
+		</div>
+		<!-- end #service-->
+
+		<content id="content">
+		<div class="wrapper">
+			<ul class="content_top">
+				<li>
+					<div class="product">
+						<a href="#"><img src="images/sp1.png"></a> <a href="#"><h4>sune</h4></a>
+					</div>
+				</li>
+				<li>
+					<div class="product">
+						<a href="#"><img src="images/sp2.png"></a> <a href="#"><h4>bssc</h4></a>
+					</div>
+				</li>
+				<li>
+					<div class="product">
+						<a href="#"><img src="images/sp3.png"></a> <a href="#"><h4>sune</h4></a>
+					</div>
+				</li>
+				<li>
+					<div class="product">
+						<a href="#"><img src="images/sp4.png"></a> <a href="#"><h4>bssc</h4></a>
+					</div>
+				</li>
+				<li>
+					<div class="product">
+						<a href="#"><img src="images/sp5.png"></a> <a href="#"><h4>bssc</h4></a>
+					</div>
+				</li>
+				<li>
+					<div class="product">
+						<a href="#"><img src="images/sp6.png"></a> <a href="#"><h4>sune</h4></a>
+					</div>
+				</li>
+			</ul>
+			<!-- end .content_top-->
+
+			<div class="content_bottom">
+				<ul>
+					<li class="title-v1"><h4>CAM KẾT CỦA CHÚNG TÔI</h4></li>
+					<li><a href="#">Giao hàng đúng hẹn</a></li>
+					<li><a href="#">Đáp ứng yêu cầu khách hàng</a></li>
+					<li><a href="#">Quy trình chuyên nghiệp</a></li>
+				</ul>
+				<ul>
+					<li class="title-v2"><h4>LỢI ÍCH KHÁCH HÀNG</h4></li>
+					<li><a href="#">Giá cả hợp lý thị trường</a></li>
+					<li><a href="#">Giao dịch nhanh chóng và tiện lợi</a></li>
+					<li><a href="#">Được tư vấn tận tình</a></li>
+				</ul>
+				<ul>
+					<li class="title-v3"><h4>HỖ TRỢ</h4></li>
+					<li><a href="Skype:hoanitk?chat"> <img
+							src="http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_32px.png"
+							alt="Skype call">
+					</a></li>
+					<li><a href="ymsgr:sendIM?anhhoandb@yahoo.com"\"> <img
+							border=0
+							src=http://opi.yahoo.com/online?u=anhhoandb@yahoo.com&m=g&t=2 />
+					</a></li>
+					<li><img src="images/icon.png" /></li>
+				</ul>
+			</div>
+			<!-- end .content_bottom-->
+			<hr width="890" />
+			<br class="clear" />
+		</div>
+		<!-- end .wrapper--> </content>
+		<!-- end #content-->
+
+		<footer id="footer">
+			<div class="wrapper">
+				<ul id="menu_bottom">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Sản phẩm</a></li>
+					<li><a href="#">Đặt thiết kết</a></li>
+					<li><a href="#">Hướng dẫn</a></li>
+					<li><a href="#">Liên hệ</a></li>
+					<li><a href="#">Góp ý</a></li>
+				</ul>
+
+				<div class="address">
+					<p>
+						Địa chỉ: <b>Số 36/86 An Trạch 2, Quốc Tử Giám - ĐĐ - HN</b><br />
+						Tel: <b>01658909775</b> &nbsp;&nbsp; * Email: <b>anhhoandb@gmail.com</b><br />
+						Online Skype: <b>anhhoandb91</b> &nbsp;&nbsp; * Website: <b>anhhoandb.com</b><br />
+					</p>
+				</div>
+				<!-- end .address-->
+
+				<div class="copyright">
+					<p>© copyright 2015 - Design by anhhoandb.com</p>
+				</div>
+				<!-- end .copyright-->
+
+				<br class="clear" />
+			</div>
+			<!-- end .wrapper-->
+		</footer>
+		<!-- end #footer-->
+	</form>
+</body>
+</html>

@@ -1,0 +1,97 @@
+#navbar {
+	margin-bottom: 15px;
+	position: relative;
+}
+
+#navbar>li {
+	position: relative;
+	display: inline;
+	padding: 15px;
+	background: transparent url('../images/border-menu.png') right center
+		no-repeat;
+}
+
+#navbar>li:last-child {
+	background: none;
+	margin-right: 0;
+}
+
+#navbar li a {
+	color: #000;
+	font-size: 13pt;
+}
+
+#navbar>li>a:hover {
+	color: #ff7426;
+}
+
+#navbar>li>ul {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 44px;
+	width: 182px;
+	z-index: 9;
+	border: 1px solid #a4a4a4;
+	background: #fff;
+	opacity: 0.98;
+}
+
+#navbar>li:hover>ul {
+	display: block;
+}
+
+.margin-top-12 {
+	margin-top: -12px;
+}
+
+#navbar li ul  li {
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 7px 0;
+	background: transparent url('../images/line-menu.png') bottom center
+		no-repeat;
+}
+
+#navbar li  ul li:last-child {
+	background: none;
+}
+
+#navbar>li>ul>li.arrow {
+	position: relative;
+	width: 14px;
+	height: 12px;
+	background: #fff url('../images/border-menu-arrow.png') left top
+		no-repeat;
+	top: -12px;
+	left: 37px;
+	padding: 0;
+}
+
+#navbar li ul li a {
+	float: left;
+	margin-left: 20px;
+	color: #585858;
+	font-size: 10pt;
+}
+
+#navbar li ul li a:hover {
+	color: #ff8042;
+}
+
+#navbar>li>ul>li>ul {
+	display: none;
+	position: absolute;
+	left: 182px;
+	top: -1px;
+	width: 182px;
+	opacity: 0.99;
+	background: #fff;
+	border: 1px solid #a4a4a4;
+}
+
+#navbar>li>ul>li:hover>ul {
+	display: block;
+}
