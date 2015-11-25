@@ -47,6 +47,11 @@
 						</div>
 					</div>
 				</div>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<jsp:include page="../../common/editor.jsp"></jsp:include>
+					</div>
+				</div>
 			</div>
 			<div class="box-footer">
 				<input type="button" class="btn btn-info pull-right" value="Tim kiem" />
@@ -60,5 +65,7 @@
 		$('.datepicker').datepicker({
 		    language: 'vi'
 		});
+		
+		$(".textarea").wysihtml5();
 	});
 </script>

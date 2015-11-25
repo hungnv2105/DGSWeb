@@ -17,3 +17,4 @@
 <link rel="stylesheet" href="<%=contextPath%>/css/plugins/dataTables.bootstrap.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/bootstrap/style.css" />
 <link rel="stylesheet" href="<%=contextPath%>/css/plugins/datepicker3.css" />
+<link rel="stylesheet" href="<%=contextPath%>/css/plugins/wysi/bootstrap3-wysihtml5.min.css" />

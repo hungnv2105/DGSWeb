@@ -8,4 +8,5 @@
 <script src="<%=contextPath%>/js/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="<%=contextPath%>/js/plugins/datepickers/bootstrap-datepicker.js"></script>
 <script src="<%=contextPath%>/js/plugins/datepickers/bootstrap-datepicker.vi.js"></script>
+<script src="<%=contextPath%>/js/plugins/wysi/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="<%=contextPath%>/js/ajax/ajaxLib.js"></script>
