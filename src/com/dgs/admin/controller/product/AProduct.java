@@ -1,4 +1,4 @@
-package com.dgs.admin.product.action;
+package com.dgs.admin.controller.product;
 
 import com.dgs.action.ACore;
 import com.dgs.admin.product.object.Product;

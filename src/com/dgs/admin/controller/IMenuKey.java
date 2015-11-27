@@ -1,4 +1,4 @@
-package com.dgs.admin.menu.action;
+package com.dgs.admin.controller;
 
 import com.dgs.admin.inf.IKeyProcess;
 

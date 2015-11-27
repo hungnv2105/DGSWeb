@@ -1,4 +1,4 @@
-package com.dgs.admin.menu.action;
+package com.dgs.admin.controller;
 
 import java.util.HashMap;
 import java.util.Map;
