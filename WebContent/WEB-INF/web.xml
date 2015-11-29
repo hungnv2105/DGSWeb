@@ -4,6 +4,15 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
   <display-name>DGSWeb</display-name>
+  
+	 <listener>
+      <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+   </listener>
+   <context-param>
+      <param-name>tilesDefinitions</param-name>
+      <param-value>/WEB-INF/tiles.xml</param-value>
+   </context-param>
+	  
   <welcome-file-list>
       <welcome-file>redirect.jsp</welcome-file>
    </welcome-file-list>

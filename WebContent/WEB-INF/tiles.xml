@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="baseLayout" template="/common/public/pubLayout.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="banner" value="/common/public/banner.jsp"/>
+      <put-attribute name="menu"   value="/common/public/menu.jsp"/>
+      <put-attribute name="slide"   value="/common/public/slide.jsp"/>
+      <put-attribute name="sideBar"   value="/common/public/sideBar.jsp"/>
+      <put-attribute name="mainContent" />
+      <put-attribute name="primary"   value="/common/public/primary.jsp"/>
+      <put-attribute name="footer"   value="/common/public/footer.jsp"/>
+  </definition>
+  
+  <definition name="welcome" extends="baseLayout">
+      <put-attribute name="title"  value="Welcome"/>
+      <put-attribute name="mainContent" value="/public/home.jsp"/>      
+  </definition>
+  
+  
+</tiles-definitions>
