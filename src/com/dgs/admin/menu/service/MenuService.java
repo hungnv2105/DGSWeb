@@ -15,10 +15,8 @@ public class MenuService extends BaseService {
 	public ResponseObj process(OBean bean) throws DGException {
 		try {
 			startTransaction();
-			if (bean.getProcessId() == IKeyProcess.GET_LIST_BEANS) {
-				responseObj.setListResponse(dao.getListScreen(this.connection));
-			} else if (bean.getProcessId() == IKeyProcess.GET_LIST_GROUP) {
-				responseObj.setListResponse(dao.getListGroupScreen(this.connection));
+			if (bean.getProcessId() == IKeyProcess.GET_LIST_GROUP) {
+				responseObj.setListResponse(dao.getTreeScreen(this.connection));
 			}
 			endTransaction();
 		} catch (DGException e) {

@@ -12,6 +12,7 @@ public abstract class OBean {
 	protected String resMessage;
 	protected String reqMessage;
 	protected int objId;
+	protected ListBeans listBean;
 
 	public int getObjId() {
 		return objId;
@@ -43,6 +44,13 @@ public abstract class OBean {
 
 	public void setProcessId(int processId) {
 		this.processId = processId;
+	}
+	
+	public ListBeans getListBean() {
+		return listBean;
+	}
+	public void setListBean(ListBeans listBean) {
+		this.listBean = listBean;
 	}
 
 }

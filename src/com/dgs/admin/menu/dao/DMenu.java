@@ -3,6 +3,10 @@ package com.dgs.admin.menu.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import com.dgs.admin.menu.object.GroupScreenObject;
 import com.dgs.admin.menu.object.ScreenObject;
@@ -14,19 +18,28 @@ public class DMenu extends DCoreImpl {
 	final private String location = this.getClass().getName();
 	private int objType;
 
-	public ListBeans getListGroupScreen(Connection connection) throws DGException {
+	public ListBeans getTreeScreen(Connection connection) throws DGException {
+		ListBeans list = null;
 		objType = 0;
 		StringBuilder sb = new StringBuilder();
 		sb.append("select * from group_screen order by ord");
 		ResultSet rs = this.executeQuery(connection, sb.toString(), null);
-		return getObjectInfo(rs);
+		list = getObjectInfo(rs);
+		if (list != null) {
+			for (int i = 0; i < list.size(); i++) {
+				list.get(i).setListBean(getListScreen(connection, ((GroupScreenObject)list.get(i)).getGroupId()));
+			}
+		}
+		return list;
 	}
 
-	public ListBeans getListScreen(Connection connection) throws DGException {
+	public ListBeans getListScreen(Connection connection, int groupId) throws DGException {
 		objType = 1;
 		StringBuilder sb = new StringBuilder();
-		sb.append("select * from screen order by ord");
-		ResultSet rs = this.executeQuery(connection, sb.toString(), null);
+		sb.append("select * from screen where groupId = ? order by ord");
+		HashMap<Integer, Object> params = new HashMap<Integer, Object>();
+		params.put(Types.INTEGER, groupId);
+		ResultSet rs = this.executeQuery(connection, sb.toString(), params);
 		return getObjectInfo(rs);
 	}
 

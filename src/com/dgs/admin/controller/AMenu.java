@@ -39,8 +39,6 @@ public class AMenu extends BaseController implements IMenuKey {
 		Map<String, Object> respone = new HashMap<String, Object>();
 		try {
 			bean.setProcessId(GET_LIST_GROUP);
-			respone.put("listGMenu", service.process(bean).getListResponse());
-			bean.setProcessId(GET_LIST_BEANS);
 			respone.put("listMenu", service.process(bean).getListResponse());
 			resp.setRespJson(respone);
 		} catch (DGException e) {
