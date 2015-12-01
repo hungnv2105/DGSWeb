@@ -1,4 +1,4 @@
-package com.dgs.pub.menu.dao;
+package com.dgs.pub.common.menu.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import com.dgs.dao.DCoreImpl;
 import com.dgs.dao.DGException;
 import com.dgs.object.ListBeans;
-import com.dgs.pub.menu.object.MenuObject;
+import com.dgs.pub.common.menu.object.MenuObject;
 
 public class DMenu extends DCoreImpl {
 	final private String location = this.getClass().getName();

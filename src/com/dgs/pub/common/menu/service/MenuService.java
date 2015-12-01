@@ -1,6 +1,6 @@
-package com.dgs.pub.menu.service;
+package com.dgs.pub.common.menu.service;
 
-import com.dgs.pub.menu.dao.DMenu;
+import com.dgs.pub.common.menu.dao.DMenu;
 import com.dgs.pub.inf.IKeyProcess;
 import com.dgs.dao.DGException;
 import com.dgs.object.OBean;
