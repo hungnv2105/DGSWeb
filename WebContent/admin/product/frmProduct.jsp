@@ -8,9 +8,13 @@
 		<div class="form-horizontal">
 			<div class="box-body">
 				<div class="form-group">
-					<label for="productParent" class="col-sm-2 control-label"><s:property value="getText('product.category')"/></label>
+					<label for="productParent" class="col-sm-2 control-label">Loai sp</label>
 					<div class="col-sm-4">
-						<select class="form-control" name="productParent" id="productParent"></select>
+						<select class="form-control" name="productParent" id="productParent">
+							<s:iterator value="listGroup" status="gProduct">
+								<option value="#gProduct.productCode" label="#gProduct.productName"/>
+							</s:iterator>
+						</select>
 					</div>
 					<label for="productStatus" class="col-sm-2 control-label">Trang thai</label>
 					<div class="col-sm-4">

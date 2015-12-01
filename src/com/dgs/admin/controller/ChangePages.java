@@ -11,7 +11,7 @@ import com.dgs.dao.DGException;
 import com.dgs.object.RespJson;
 import com.dgs.service.BaseService;
 
-public class AMenu extends BaseController implements IMenuKey {
+public class ChangePages extends BaseController implements IMenuKey {
 
 	/**
 	 * author : hungnv 
@@ -22,7 +22,7 @@ public class AMenu extends BaseController implements IMenuKey {
 	private ScreenObject bean = new ScreenObject();
 	private RespJson resp = new RespJson();
 	private BaseService service = null;
-	final static Logger LOGGER = Logger.getLogger(AMenu.class);
+	final static Logger LOGGER = Logger.getLogger(ChangePages.class);
 
 	private String pageForward;
 
