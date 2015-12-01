@@ -3,10 +3,10 @@ package com.dgs.object;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RespJson  {
+public class RespJSON  {
 	private int respCode;
 	private int respMsg;
-	private Map<String, Object> respJson = new HashMap<String, Object>();
+	private Map<String, Object> jsonObject = new HashMap<String, Object>();
 	
 	public int getRespCode() {
 		return respCode;
@@ -20,11 +20,11 @@ public class RespJson  {
 	public void setRespMsg(int respMsg) {
 		this.respMsg = respMsg;
 	}
-	public Map<String, Object> getRespJson() {
-		return respJson;
+	public Map<String, Object> getJsonObject() {
+		return jsonObject;
 	}
-	public void setRespJson(Map<String, Object> respJson) {
-		this.respJson = respJson;
+	public void setRespJson(Map<String, Object> jsonObject) {
+		this.jsonObject = jsonObject;
 	}
 
 }
