@@ -1,15 +1,26 @@
 package com.dgs.controller;
 
-import com.dgs.object.RespJson;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
+import java.io.IOException;
 
-public abstract class BaseController extends ActionSupport implements ModelDriven<RespJson> {
+import org.codehaus.jackson.map.ObjectMapper;
 
+import com.dgs.object.RespJSON;
+
+public abstract class BaseController {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-
-
+	
+	protected ObjectMapper mapper = new ObjectMapper();
+	protected RespJSON respJSON = new RespJSON();
+	
+	protected String parseJSON(RespJSON resp) {
+		try {
+			return mapper.writeValueAsString(resp);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
