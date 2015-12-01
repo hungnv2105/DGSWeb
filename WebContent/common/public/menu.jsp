@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.dgs.pub.menu.action.AMenu" %>
-<%@ page import="com.dgs.pub.menu.object.MenuObject" %>
+<%@ page import="com.dgs.pub.common.menu.action.AMenu" %>
+<%@ page import="com.dgs.pub.common.menu.object.MenuObject" %>
 <%
 	AMenu menu = new AMenu();
 	MenuObject menuObject = null;

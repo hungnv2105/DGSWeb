@@ -1,10 +1,10 @@
-package com.dgs.pub.menu.action;
+package com.dgs.pub.common.menu.action;
 
 import com.dgs.dao.DGException;
 import com.dgs.object.ListBeans;
+import com.dgs.pub.common.menu.object.MenuObject;
+import com.dgs.pub.common.menu.service.MenuService;
 import com.dgs.pub.inf.IKeyProcess;
-import com.dgs.pub.menu.object.MenuObject;
-import com.dgs.pub.menu.service.MenuService;
 
 public class AMenu {
 	private ListBeans listBiean;

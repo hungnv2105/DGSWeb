@@ -9,4 +9,6 @@
 	<include file="/struts_mappings/mapping-admin-menu.xml" />
 	<include file="/struts_mappings/mapping-user.xml" />
 	
+	<!-- 	public -->
+	<include file="/struts_mappings/mapping-pub-home.xml" />
 </struts>

@@ -17,8 +17,8 @@
       <put-attribute name="footer"   value="/common/public/footer.jsp"/>
   </definition>
   
-  <definition name="welcome" extends="baseLayout">
-      <put-attribute name="title"  value="Welcome"/>
+  <definition name="binhminh" extends="baseLayout">
+      <put-attribute name="title"  value="binh minh"/>
       <put-attribute name="mainContent" value="/public/home.jsp"/>      
   </definition>
   
