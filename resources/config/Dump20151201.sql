@@ -121,31 +121,6 @@ LOCK TABLES `file_upload` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `group_screen`
---
-
-DROP TABLE IF EXISTS `group_screen`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `group_screen` (
-  `group_id` int(11) NOT NULL AUTO_INCREMENT,
-  `group_name` varchar(256) DEFAULT NULL,
-  `ord` int(11) DEFAULT NULL,
-  PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `group_screen`
---
-
-LOCK TABLES `group_screen` WRITE;
-/*!40000 ALTER TABLE `group_screen` DISABLE KEYS */;
-INSERT INTO `group_screen` VALUES (1,'Quản trị người dùng',1),(2,'Quản lý hóa đơn',2),(3,'Quản trị nội dung',3),(4,'Quản trị tin tức',4);
-/*!40000 ALTER TABLE `group_screen` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `leads`
 --
 
@@ -434,14 +409,13 @@ CREATE TABLE `screen` (
   `screen_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `screen_code` varchar(256) NOT NULL,
   `screen_name` varchar(256) NOT NULL,
-  `groupId` int(10) unsigned DEFAULT NULL,
+  `group` int(10) unsigned DEFAULT NULL,
   `type` int(10) unsigned NOT NULL DEFAULT '0',
   `link` varchar(256) DEFAULT NULL,
   `status` int(10) unsigned DEFAULT NULL,
   `ord` int(11) DEFAULT NULL,
   `action` varchar(256) DEFAULT NULL,
   `level` int(10) DEFAULT NULL,
-  `relative` int(10) DEFAULT NULL,
   PRIMARY KEY (`screen_id`,`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -452,7 +426,7 @@ CREATE TABLE `screen` (
 
 LOCK TABLES `screen` WRITE;
 /*!40000 ALTER TABLE `screen` DISABLE KEYS */;
-INSERT INTO `screen` VALUES (1,'SCRUSER','Quản lý tài khoản',1,1,'/admin/users/index.jsp',1,1,'viewUserPage',NULL,NULL),(2,'SCRROLE','Phân quyền',1,1,'/admin/role/index.jsp',1,2,'viewRolePage',NULL,NULL),(3,'SCRPRODUCT','Quản lý sản phẩm',3,1,'/admin/product/index',1,1,'viewManageProductPage',NULL,NULL),(4,'SCRHOME','Trang chủ',NULL,2,'/index',1,1,'index',NULL,NULL),(5,'SCRABOUT','Giới Thiệu',NULL,2,'/about',1,2,'about',NULL,NULL);
+INSERT INTO `screen` VALUES (1,'SCRUSER','Quản lý tài khoản',1,1,'/admin/users/index.jsp',1,1,'viewUserPage',NULL),(2,'SCRROLE','Phân quyền',1,1,'/admin/role/index.jsp',1,2,'viewRolePage',NULL),(3,'SCRPRODUCT','Quản lý sản phẩm',3,1,'/admin/product/index',1,1,'viewManageProductPage',NULL),(4,'SCRHOME','Trang chủ',NULL,2,'/index',1,1,'index',NULL),(5,'SCRABOUT','Giới Thiệu',NULL,2,'/about',1,2,'about',NULL);
 /*!40000 ALTER TABLE `screen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -503,4 +477,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-01 22:32:35
+-- Dump completed on 2015-12-01 22:57:27
