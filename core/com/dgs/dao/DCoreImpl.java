@@ -3,17 +3,12 @@
  */
 package com.dgs.dao;
 
-import java.sql.Blob;
 import java.sql.CallableStatement;
-import java.sql.Clob;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
-import java.util.HashMap;
-import java.util.Map.Entry;
+import java.util.List;
 
 import com.dgs.inf.DCore;
 import com.dgs.inf.IErrorCode;
@@ -27,12 +22,12 @@ public abstract class DCoreImpl implements DCore {
 	private final String location = this.getClass().getName();
 
 	@Override
-	public PreparedStatement preparedStatement(Connection conn, String query, HashMap<Integer, Object> prstmParams)
+	public PreparedStatement preparedStatement(Connection conn, String query, List<Object> prstmParams)
 			throws DGException {
 		return preparedStatement(conn, query, prstmParams, true);
 	}
 
-	public PreparedStatement preparedStatement(Connection conn, String query, HashMap<Integer, Object> prstmParams,
+	public PreparedStatement preparedStatement(Connection conn, String query, List<Object> prstmParams,
 			boolean srcollResultSet) throws DGException {
 		String errorInf = this.location + "->preparedStatement";
 		PreparedStatement prstm = null;
@@ -57,7 +52,7 @@ public abstract class DCoreImpl implements DCore {
 	}
 
 	@Override
-	public int executeUpdate(Connection conn, String query, HashMap<Integer, Object> prstmParams) throws DGException {
+	public int executeUpdate(Connection conn, String query, List<Object> prstmParams) throws DGException {
 		String errorInf = this.location + "->executeUpdate";
 		int result = 0;
 		PreparedStatement prstm = preparedStatement(conn, query, prstmParams);
@@ -84,7 +79,7 @@ public abstract class DCoreImpl implements DCore {
 	}
 
 	@Override
-	public ResultSet executeQuery(Connection conn, String query, HashMap<Integer, Object> prstmParams)
+	public ResultSet executeQuery(Connection conn, String query, List<Object> prstmParams)
 			throws DGException {
 		String errorInf = this.location + "->executeQuery";
 		ResultSet rs = null;
@@ -98,7 +93,7 @@ public abstract class DCoreImpl implements DCore {
 	}
 
 	@Override
-	public ResultSet executeSP(Connection conn, String callableStatement, HashMap<Integer, Object> prstmParams)
+	public ResultSet executeSP(Connection conn, String callableStatement, List<Object> prstmParams)
 			throws DGException {
 		String errorInf = this.location + " -> executeSP";
 		ResultSet rs = null; 
@@ -127,38 +122,12 @@ public abstract class DCoreImpl implements DCore {
 		return rs;
 	}
 	
-	private void setPraramsForSQLStatement(PreparedStatement prstm, HashMap<Integer, Object> prstmParams) throws DGException, SQLException {
-		String errorInf = this.location + " -> setPraramsForSQLStatement";
+	private void setPraramsForSQLStatement(PreparedStatement prstm, List<Object> prstmParams) throws DGException, SQLException {
 		if (prstm != null) {
 			if (prstmParams != null && prstmParams.size() > 0) {
 				int i = 0;
-				for (Entry<Integer, Object> e : prstmParams.entrySet()) {
-					if (e.getKey() == Types.INTEGER) {
-						prstm.setInt(++i, (int) e.getValue());
-					} else if (e.getKey() == Types.BIGINT) {
-						prstm.setLong(++i, (long) e.getValue());
-					} else if (e.getKey() == Types.FLOAT) {
-						prstm.setFloat(++i, (float) e.getValue());
-					} else if (e.getKey() == Types.DOUBLE) {
-						prstm.setDouble(++i, (double) e.getValue());
-					} else if (e.getKey() == Types.VARCHAR || e.getKey() == Types.NVARCHAR
-							|| e.getKey() == Types.LONGVARCHAR || e.getKey() == Types.LONGNVARCHAR) {
-						prstm.setString(++i, (String) e.getValue());
-					} else if (e.getKey() == Types.DATE) {
-						prstm.setDate(++i, (Date) e.getValue());
-					} else if (e.getKey() == Types.BOOLEAN) {
-						prstm.setFloat(++i, (float) e.getValue());
-					} else if (e.getKey() == Types.CLOB) {
-						prstm.setClob(++i, (Clob) e.getValue());
-					} else if (e.getKey() == Types.BLOB) {
-						prstm.setBlob(++i, (Blob) e.getValue());
-					} else if (e.getKey() == Types.NCLOB) {
-						prstm.setClob(++i, (Clob) e.getValue());
-					} else {
-						throw new DGException(errorInf + " : " + IErrorCode.ERROR_PARAMS_TYPE_CODE
-								+ IErrorCode.ERROR_PARAMS_TYPE_DESC);
-					}
-
+				for (Object param : prstmParams) {
+					prstm.setObject(++i, param);
 				}
 			}
 		}

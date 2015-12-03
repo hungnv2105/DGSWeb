@@ -5,9 +5,6 @@
 
 	<constant name="struts.devMode" value="true" />
  	<constant name="struts.action.extension" value="html" />
- 	
-	<include file="/struts_mappings/mapping-admin-menu.xml" />
-	<include file="/struts_mappings/mapping-user.xml" />
 	
 	<!-- 	public -->
 	<include file="/struts_mappings/mapping-pub-home.xml" />

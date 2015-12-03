@@ -3,58 +3,47 @@ package com.dgs.admin.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
 import org.apache.log4j.Logger;
+
 import com.dgs.admin.menu.object.ScreenObject;
 import com.dgs.admin.menu.service.MenuService;
 import com.dgs.controller.BaseController;
 import com.dgs.dao.DGException;
-import com.dgs.object.RespJson;
+
 import com.dgs.service.BaseService;
 
+@Path("/changePage")
 public class ChangePages extends BaseController implements IMenuKey {
 
 	/**
 	 * author : hungnv 
 	 * created on : 06/10/2015
 	 */
-	private static final long serialVersionUID = -5736939767190021553L;
-
 	private ScreenObject bean = new ScreenObject();
-	private RespJson resp = new RespJson();
 	private BaseService service = null;
 	final static Logger LOGGER = Logger.getLogger(ChangePages.class);
-
-	private String pageForward;
-
-	public String getPageForward() {
-		return pageForward;
-	}
-	public void setPageForward(String pageForward) {
-		this.pageForward = pageForward;
-	}
-
-	@Override
-	public String execute() {
+	
+	@GET
+	@Path("/listMenu")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getListMenu() {
 		service = new MenuService();
 		Map<String, Object> respone = new HashMap<String, Object>();
 		try {
-			bean.setProcessId(GET_LIST_GROUP);
+			bean.setProcessId(GET_LIST_BEANS);
 			respone.put("listMenu", service.process(bean).getListResponse());
-			resp.setRespJson(respone);
+			respJSON.setRespJson(respone);
+			return parseJSON(respJSON);
 		} catch (DGException e) {
 			e.printStackTrace();
 			LOGGER.error(e);
-		}
-		return SUCCESS;
+		} 
+		return null;
 	}
 
-	public String changePage() {
-		return this.pageForward;
-	}
-
-	@Override
-	public RespJson getModel() {
-		// TODO Auto-generated method stub
-		return resp;
-	}
 }

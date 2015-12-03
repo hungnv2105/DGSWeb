@@ -3,10 +3,8 @@ package com.dgs.admin.menu.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.dgs.admin.menu.object.GroupScreenObject;
 import com.dgs.admin.menu.object.ScreenObject;
@@ -37,8 +35,8 @@ public class DMenu extends DCoreImpl {
 		objType = 1;
 		StringBuilder sb = new StringBuilder();
 		sb.append("select * from screen where groupId = ? order by ord");
-		HashMap<Integer, Object> params = new HashMap<Integer, Object>();
-		params.put(Types.INTEGER, groupId);
+		List<Object> params = new ArrayList<Object>();
+		params.add(groupId);
 		ResultSet rs = this.executeQuery(connection, sb.toString(), params);
 		return getObjectInfo(rs);
 	}
