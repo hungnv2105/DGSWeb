@@ -1,13 +1,16 @@
+<%@page import="com.dgs.object.ListBeans"%>
+<%@page import="com.dgs.pub.common.menu.object.MenuRstObject"%>
+<%@ page import="com.dgs.pub.common.menu.action.AMenu" %>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.dgs.pub.common.menu.action.AMenu" %>
-<%@ page import="com.dgs.pub.common.menu.object.MenuObject" %>
+
 <%
 	AMenu menu = new AMenu();
-	MenuObject menuObject = null;
+	ListBeans list = menu.getListMenuTop(0, 1);
 	out.print("<ul>");
-	for(int i=0;i<menu.getListBiean().size(); i++){
-		menuObject = (MenuObject) menu.getListBiean().get(i);
+	for(int i=0;i<list.size(); i++){
+		MenuRstObject menuObject = (MenuRstObject)list.get(i);
 		out.print("<li><a href=\"");
 		out.print(menuObject.getLink());
 		out.print("\" />");
