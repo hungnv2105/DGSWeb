@@ -10,7 +10,7 @@
       <put-attribute name="title"  value="Template"/>
       <put-attribute name="banner" value="/common/public/banner.jsp"/>
       <put-attribute name="menu"   value="/common/public/menu.jsp"/>
-      <put-attribute name="slide"   value="/common/public/slide.jsp"/>
+      <put-attribute name="slider"   value="/common/public/slider.jsp"/>
       <put-attribute name="sideBar"   value="/common/public/sideBar.jsp"/>
       <put-attribute name="mainContent" />
       <put-attribute name="primary"   value="/common/public/primary.jsp"/>

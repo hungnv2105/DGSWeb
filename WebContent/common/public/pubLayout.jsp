@@ -21,7 +21,7 @@
 				<tiles:insertAttribute name="menu" />
 			</div><!-- end #mainNav -->
 			<div id="slide">
-				<tiles:insertAttribute name="slide" />
+				<tiles:insertAttribute name="slider" />
 			</div><!-- end #slide -->
 			<div class="clr"></div>
 		</div><!-- end #header -->

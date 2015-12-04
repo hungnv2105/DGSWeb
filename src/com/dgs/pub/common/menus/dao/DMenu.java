@@ -1,4 +1,4 @@
-package com.dgs.pub.common.menu.dao;
+package com.dgs.pub.common.menus.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,20 +9,33 @@ import java.util.List;
 import com.dgs.dao.DCoreImpl;
 import com.dgs.dao.DGException;
 import com.dgs.object.ListBeans;
-import com.dgs.pub.common.menu.object.MenuObject;
-import com.dgs.pub.common.menu.object.MenuPrmObject;
+import com.dgs.pub.common.menus.object.MenuPrmObject;
+import com.dgs.pub.common.menus.object.MenuRstObject;
 
 public class DMenu extends DCoreImpl {
 	final private String location = this.getClass().getName();
 
 	public ListBeans getListScreen(Connection connection, MenuPrmObject param) throws DGException {
 		StringBuilder sb = new StringBuilder();
-		sb.append("select screen_id,screen_name,link,group,level ");
+		sb.append("select screen_id,screen_name,link,screen_group,screen_level ");
 		sb.append("from screen ");
-		sb.append("where group = ? and level = ? and type = ? and status = 1 ");
-		sb.append("order by ord and level and group");
+		sb.append("where screen_group = ? and screen_level = ? and type = ? and status = 1 ");
+		sb.append("order by ord and screen_level and screen_group");
 		List<Object> params = new ArrayList<Object>();
 		params.add(param.getGroup());
+		params.add(param.getLevel());
+		params.add(param.getType());
+		ResultSet rs = this.executeQuery(connection, sb.toString(), params);
+		return getObjectInfo(rs);
+	}
+	
+	public ListBeans getListScreenByLevel(Connection connection, MenuPrmObject param) throws DGException {
+		StringBuilder sb = new StringBuilder();
+		sb.append("select screen_id,screen_name,link,screen_group,screen_level ");
+		sb.append("from screen ");
+		sb.append("where screen_level = ? and type = ? and status = 1 ");
+		sb.append("order by ord and screen_level and screen_group");
+		List<Object> params = new ArrayList<Object>();
 		params.add(param.getLevel());
 		params.add(param.getType());
 		ResultSet rs = this.executeQuery(connection, sb.toString(), params);
@@ -36,12 +49,14 @@ public class DMenu extends DCoreImpl {
 		ListBeans list = new ListBeans();
 		try {
 
-			MenuObject scrObj = null;
+			 MenuRstObject scrObj = null;
 			while (rs.next()) {
-				scrObj = new MenuObject();
+				scrObj = new MenuRstObject();
 				scrObj.setScreenId(rs.getInt("screen_id"));
 				scrObj.setScreenName(rs.getString("screen_name"));
 				scrObj.setLink(rs.getString("link"));
+				scrObj.setScreenGroup(rs.getInt("screen_group"));
+				scrObj.setScreenLevel(rs.getInt("screen_level"));
 				list.add(scrObj);
 			}
 
