@@ -3,7 +3,7 @@ package com.dgs.object;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RespJSON  {
+public class RespJSON extends OBean {
 	private int respCode;
 	private int respMsg;
 	private Map<String, Object> jsonObject = new HashMap<String, Object>();
@@ -23,7 +23,7 @@ public class RespJSON  {
 	public Map<String, Object> getJsonObject() {
 		return jsonObject;
 	}
-	public void setRespJson(Map<String, Object> jsonObject) {
+	public void setJsonObject(Map<String, Object> jsonObject) {
 		this.jsonObject = jsonObject;
 	}
 

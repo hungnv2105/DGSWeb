@@ -3,47 +3,61 @@ package com.dgs.admin.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-
 import org.apache.log4j.Logger;
 
+import com.dgs.action.ACore;
 import com.dgs.admin.menu.object.ScreenObject;
 import com.dgs.admin.menu.service.MenuService;
-import com.dgs.controller.BaseController;
 import com.dgs.dao.DGException;
-
+import com.dgs.object.RespJSON;
 import com.dgs.service.BaseService;
 
-@Path("/changePage")
-public class ChangePages extends BaseController implements IMenuKey {
+public class ChangePages extends ACore implements IMenuKey {
 
 	/**
 	 * author : hungnv 
 	 * created on : 06/10/2015
 	 */
+	private static final long serialVersionUID = -5736939767190021553L;
+
 	private ScreenObject bean = new ScreenObject();
+	private RespJSON resp = new RespJSON();
 	private BaseService service = null;
 	final static Logger LOGGER = Logger.getLogger(ChangePages.class);
-	
-	@GET
-	@Path("/listMenu")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String getListMenu() {
+
+	private String pageForward;
+
+	public String getPageForward() {
+		return pageForward;
+	}
+	public void setPageForward(String pageForward) {
+		this.pageForward = pageForward;
+	}
+
+	@Override
+	public String execute() {
 		service = new MenuService();
 		Map<String, Object> respone = new HashMap<String, Object>();
 		try {
+			bean.setProcessId(GET_LIST_GROUP);
+			respone.put("listGMenu", service.process(bean).getListResponse());
 			bean.setProcessId(GET_LIST_BEANS);
 			respone.put("listMenu", service.process(bean).getListResponse());
-			respJSON.setRespJson(respone);
-			return parseJSON(respJSON);
+			resp.setJsonObject(respone);
 		} catch (DGException e) {
 			e.printStackTrace();
 			LOGGER.error(e);
-		} 
-		return null;
+		}
+		return SUCCESS;
 	}
 
+	public String changePage() {
+		return this.pageForward;
+	}
+
+	@Override
+	public RespJSON getModel() {
+		// TODO Auto-generated method stub
+		return resp;
+	}
 }

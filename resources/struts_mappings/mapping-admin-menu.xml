@@ -4,12 +4,12 @@
 <struts>
 
 	<package name="default" namespace="/admin" extends="json-default">
-		<action name="index" class="com.dgs.admin.controller.AMenu">
+		<action name="index" class="com.dgs.admin.controller.ChangePages">
 			<result type="json">
 				<param name="contentType">application/json</param>
 			</result>
 		</action>
-		<action name="changePage" class="com.dgs.admin.controller.AMenu"
+		<action name="changePage" class="com.dgs.admin.controller.ChangePages"
 			method="changePage">
 			<result type="json" />
 		</action>
