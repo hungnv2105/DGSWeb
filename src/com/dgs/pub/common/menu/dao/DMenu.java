@@ -1,4 +1,4 @@
-package com.dgs.pub.common.menus.dao;
+package com.dgs.pub.common.menu.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,8 +9,9 @@ import java.util.List;
 import com.dgs.dao.DCoreImpl;
 import com.dgs.dao.DGException;
 import com.dgs.object.ListBeans;
-import com.dgs.pub.common.menus.object.MenuPrmObject;
-import com.dgs.pub.common.menus.object.MenuRstObject;
+import com.dgs.pub.common.menu.object.MenuPrmObject;
+import com.dgs.pub.common.menu.object.MenuRstObject;
+import com.dgs.pub.inf.IKeyProcess;
 
 public class DMenu extends DCoreImpl {
 	final private String location = this.getClass().getName();
@@ -19,8 +20,9 @@ public class DMenu extends DCoreImpl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("select screen_id,screen_name,link,screen_group,screen_level ");
 		sb.append("from screen ");
-		sb.append("where screen_group = ? and screen_level = ? and type = ? and status = 1 ");
-		sb.append("order by ord and screen_level and screen_group");
+		sb.append("where screen_group = ? and screen_level = ? and type = ? and status = ");
+		sb.append(IKeyProcess.STATUS_ACTIVE);
+		sb.append(" order by ord and screen_level and screen_group");
 		List<Object> params = new ArrayList<Object>();
 		params.add(param.getGroup());
 		params.add(param.getLevel());
@@ -33,8 +35,9 @@ public class DMenu extends DCoreImpl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("select screen_id,screen_name,link,screen_group,screen_level ");
 		sb.append("from screen ");
-		sb.append("where screen_level = ? and type = ? and status = 1 ");
-		sb.append("order by ord and screen_level and screen_group");
+		sb.append("where screen_level = ? and type = ? and status = ");
+		sb.append(IKeyProcess.STATUS_ACTIVE);
+		sb.append(" order by ord and screen_level and screen_group");
 		List<Object> params = new ArrayList<Object>();
 		params.add(param.getLevel());
 		params.add(param.getType());

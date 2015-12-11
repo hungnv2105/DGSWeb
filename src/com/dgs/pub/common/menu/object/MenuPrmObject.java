@@ -1,4 +1,4 @@
-package com.dgs.pub.common.menus.object;
+package com.dgs.pub.common.menu.object;
 
 import com.dgs.object.OBean;
 

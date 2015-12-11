@@ -1,6 +1,6 @@
 <%@page import="com.dgs.object.ListBeans"%>
-<%@page import="com.dgs.pub.common.menus.object.MenuRstObject"%>
-<%@ page import="com.dgs.pub.common.menus.action.AMenu" %>
+<%@page import="com.dgs.pub.common.menu.object.MenuRstObject"%>
+<%@ page import="com.dgs.pub.common.menu.action.AMenu" %>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
