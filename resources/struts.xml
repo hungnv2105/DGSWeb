@@ -4,12 +4,20 @@
 <struts>
 
 	<constant name="struts.devMode" value="true" />
- 	<constant name="struts.action.extension" value="html" />
 	
-	<!-- admin -->
+	<!-- REST and non-RESTful URL's Together Configuration -->
+	<constant name="struts.action.extension" value="xhtml,,xml,json,action"/>
+	<constant name="struts.mapper.class" value="org.apache.struts2.dispatcher.mapper.PrefixBasedActionMapper" />
+	<constant name="struts.mapper.prefixMapping" value="/rest:rest,:struts"/>
 	
-	<include file="/struts_mappings/mapping-admin-menu.xml" />
+	<constant name="struts.convention.action.suffix" value="Controller"/>
+	<constant name="struts.convention.action.mapAllMatches" value="true"/>
+	<constant name="struts.convention.default.parent.package" value="rest-default"/>
+	<constant name="struts.convention.package.locators" value="controller"/>
 	
-	<!-- 	public -->
+	<!-- admin REST -->
+	<!--  include file="/struts_mappings/mapping-admin-menu.xml" -->
+
+	<!-- public non-RESTful-->
 	<include file="/struts_mappings/mapping-pub-home.xml" />
 </struts>

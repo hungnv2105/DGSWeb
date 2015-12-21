@@ -1,6 +1,4 @@
-package com.dgs.admin.controller;
-
-import com.dgs.admin.inf.IKeyProcess;
+package com.dgs.admin.inf;
 
 public interface IMenuKey extends IKeyProcess {
 	public static final String VIEW_USER_PAGE = "viewUserPage";

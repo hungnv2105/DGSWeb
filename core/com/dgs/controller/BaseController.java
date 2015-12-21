@@ -1,26 +1,29 @@
 package com.dgs.controller;
 
-import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.rest.HttpHeaders;
 
 import com.dgs.object.RespJSON;
+import com.dgs.service.BaseService;
+import com.opensymphony.xwork2.ModelDriven;
 
-public abstract class BaseController {
+public abstract class BaseController implements ModelDriven<RespJSON>{
 	/**
-	 * 
+	 * author     : hungnv
+	 * created on : 18/12/2015
 	 */
+	protected RespJSON resp = new RespJSON();
+	protected BaseService service = null;
+	protected HttpServletRequest request = ServletActionContext.getRequest();
+	protected HttpServletResponse response = ServletActionContext.getResponse();
 	
-	protected ObjectMapper mapper = new ObjectMapper();
-	protected RespJSON respJSON = new RespJSON();
+	public abstract String doProcess();
 	
-	protected String parseJSON(RespJSON resp) {
-		try {
-			return mapper.writeValueAsString(resp);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
+	public abstract HttpHeaders index();
+	
+	public abstract String add();
+	
 }
