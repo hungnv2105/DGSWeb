@@ -6,7 +6,9 @@ public class BannerRstObject extends OBean {
 	private int advertiseId;
 	private String advertiseName;
 	private String link;
-	private int fileId;
+	private String fileName;
+	private String filePath;
+	private String extendtion;
 	public int getAdvertiseId() {
 		return advertiseId;
 	}
@@ -16,8 +18,14 @@ public class BannerRstObject extends OBean {
 	public String getLink() {
 		return link;
 	}
-	public int getFileId() {
-		return fileId;
+	public String getFileName() {
+		return fileName;
+	}
+	public String getFilePath() {
+		return filePath;
+	}
+	public String getExtendtion() {
+		return extendtion;
 	}
 	public void setAdvertiseId(int advertiseId) {
 		this.advertiseId = advertiseId;
@@ -28,7 +36,13 @@ public class BannerRstObject extends OBean {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	public void setFileId(int fileId) {
-		this.fileId = fileId;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	public void setExtendtion(String extendtion) {
+		this.extendtion = extendtion;
 	}
 }

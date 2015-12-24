@@ -17,8 +17,6 @@ public class BannerService extends BaseService {
 			startTransaction();
 			if (bean.getProcessId() == IKeyProcess.GET_LIST_BEANS) {
 				responseObj.setListResponse(dao.getListBanner(this.connection, (BannerPrmObject)bean));
-			}else if (bean.getProcessId() == IKeyProcess.GET_PATH_ADVERTISE) {
-				responseObj.setListResponse(dao.getPathBanner(this.connection, (BannerPrmObject)bean));
 			}
 			endTransaction();
 		} catch (DGException e) {

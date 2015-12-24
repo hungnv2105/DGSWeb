@@ -6,8 +6,11 @@ public class SliderRstObject extends OBean{
 	private int advertiseId;
 	private String advertiseName;
 	private String link;
-	private int fileId;
-	
+	private String fileName;
+	private String filePath;
+	private String extendtion;
+	private String title;
+	private String description;
 	public int getAdvertiseId() {
 		return advertiseId;
 	}
@@ -17,10 +20,21 @@ public class SliderRstObject extends OBean{
 	public String getLink() {
 		return link;
 	}
-	public int getFileId() {
-		return fileId;
+	public String getFileName() {
+		return fileName;
 	}
-	
+	public String getFilePath() {
+		return filePath;
+	}
+	public String getExtendtion() {
+		return extendtion;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public String getDescription() {
+		return description;
+	}
 	public void setAdvertiseId(int advertiseId) {
 		this.advertiseId = advertiseId;
 	}
@@ -30,7 +44,19 @@ public class SliderRstObject extends OBean{
 	public void setLink(String link) {
 		this.link = link;
 	}
-	public void setFileId(int fileId) {
-		this.fileId = fileId;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	public void setExtendtion(String extendtion) {
+		this.extendtion = extendtion;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
