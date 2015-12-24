@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.rest.HttpHeaders;
 
 import com.dgs.object.RespJSON;
 import com.dgs.service.BaseService;
@@ -22,7 +21,6 @@ public abstract class BaseController implements ModelDriven<RespJSON>{
 	
 	public abstract String doProcess();
 	
-	public abstract HttpHeaders index();
 	
 	public abstract String add();
 	
