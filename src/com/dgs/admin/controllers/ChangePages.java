@@ -7,7 +7,7 @@ import com.dgs.admin.inf.IMenuKey;
 import com.dgs.service.BaseService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class ChangePages implements ModelDriven<Object>, IMenuKey {
+public class ChangePages {
 
 	/**
 	 * author : hungnv 
@@ -17,10 +17,5 @@ public class ChangePages implements ModelDriven<Object>, IMenuKey {
 	
 	private Object model;
 	private BaseService service = null;
-	@Override
-	public Object getModel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }
