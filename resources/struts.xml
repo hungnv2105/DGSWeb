@@ -4,8 +4,7 @@
 <struts>
 
 	<constant name="struts.devMode" value="true" />
-	<constant name="struts.action.extension" value="html,,"/>
+	<constant name="struts.action.extension" value="html"/>
 
-	<!-- public non-RESTful-->
 	<include file="/struts_mappings/mapping-pub-home.xml" />
 </struts>
