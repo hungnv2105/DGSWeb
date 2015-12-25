@@ -4,13 +4,14 @@ import java.sql.Connection;
 
 import org.apache.log4j.Logger;
 
+import com.dgs.admin.inf.IKeyProcess;
 import com.dgs.dao.DBHelperImpl;
 import com.dgs.dao.DGException;
 import com.dgs.inf.DBHelper;
 import com.dgs.object.OBean;
-import com.dgs.object.ResponseObj;
+import com.dgs.object.RespMesg;
 
-public abstract class BaseService {
+public abstract class BaseService implements IKeyProcess {
 	protected Connection connection;
 	protected Logger logger = Logger.getLogger(BaseService.class);
 	private DBHelper dbHelper = new DBHelperImpl();
@@ -36,5 +37,5 @@ public abstract class BaseService {
 		dbHelper.release();
 	}
 	
-	public abstract ResponseObj process(OBean bean) throws DGException;
+	public abstract RespMesg process(OBean bean) throws DGException;
 }

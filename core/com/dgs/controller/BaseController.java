@@ -5,23 +5,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.dgs.object.RespJSON;
+import com.dgs.object.RespMesg;
 import com.dgs.service.BaseService;
-import com.opensymphony.xwork2.ModelDriven;
 
-public abstract class BaseController implements ModelDriven<RespJSON>{
+public abstract class BaseController {
 	/**
 	 * author     : hungnv
 	 * created on : 18/12/2015
 	 */
-	protected RespJSON resp = new RespJSON();
+	protected RespMesg resp = new RespMesg();
 	protected BaseService service = null;
 	protected HttpServletRequest request = ServletActionContext.getRequest();
 	protected HttpServletResponse response = ServletActionContext.getResponse();
-	
-	public abstract String doProcess();
-	
-	
-	public abstract String add();
 	
 }

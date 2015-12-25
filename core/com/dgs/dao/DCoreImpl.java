@@ -146,4 +146,5 @@ public abstract class DCoreImpl implements DCore {
 			}
 		}
 	}
+
 }

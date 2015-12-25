@@ -1,6 +1,6 @@
 package com.dgs.object;
 
-public class ResponseObj {
+public class ResponseObj extends RespMesg {
 	private ListBeans listResponse;
 	private OBean beanResponse;
 	public ListBeans getListResponse() {
