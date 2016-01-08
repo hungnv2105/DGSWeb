@@ -8,7 +8,7 @@ import org.apache.struts2.ServletActionContext;
 import com.dgs.object.RespMesg;
 import com.dgs.service.BaseService;
 
-public abstract class BaseController {
+public abstract class BaseController  {
 	/**
 	 * author     : hungnv
 	 * created on : 18/12/2015
